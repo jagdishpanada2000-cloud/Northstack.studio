@@ -59,7 +59,8 @@ export function ProjectDetail({ project }: { project: Project }) {
                     {new URL(project.liveUrl).hostname}
                   </div>
                 </div>
-                <div className="aspect-video w-full bg-[var(--surface)] overflow-hidden">
+                {/* Desktop: scaled preview, Mobile: full-width scrollable preview */}
+                <div className="hidden md:block aspect-video w-full bg-[var(--surface)] overflow-hidden">
                   <div className="w-[153.85%] h-[153.85%] origin-top-left scale-[0.65]">
                     <iframe
                       src={project.liveUrl}
@@ -69,6 +70,18 @@ export function ProjectDetail({ project }: { project: Project }) {
                       scrolling="no"
                     />
                   </div>
+                </div>
+                <div
+                  className="md:hidden w-full bg-[var(--surface)] overflow-y-auto"
+                  style={{ height: "80vh" }}
+                >
+                  <iframe
+                    src={project.liveUrl}
+                    className="h-[1200px] w-full"
+                    title="Live Webapp Preview"
+                    loading="lazy"
+                    style={{ border: "none" }}
+                  />
                 </div>
                 <div className="absolute inset-0 bg-transparent group-hover:bg-white/[0.03] transition-colors" />
               </div>
