@@ -37,7 +37,7 @@ export function ProjectDetail({ project }: { project: Project }) {
           </div>
         </motion.div>
 
-        {project.slug === "ai-notes" && (
+        {project.liveUrl && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ export function ProjectDetail({ project }: { project: Project }) {
             className="mt-12"
           >
             <a
-              href="https://mini-notes-six.vercel.app"
+              href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="block group"
@@ -56,13 +56,13 @@ export function ProjectDetail({ project }: { project: Project }) {
                   <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/60" />
                   <span className="h-2.5 w-2.5 rounded-full bg-green-500/60" />
                   <div className="ml-3 flex-1 max-w-[280px] rounded-md bg-white/[0.04] px-3 py-1 text-xs text-secondary truncate">
-                    mini-notes-six.vercel.app
+                    {new URL(project.liveUrl).hostname}
                   </div>
                 </div>
                 <div className="aspect-video w-full bg-[var(--surface)] overflow-hidden">
                   <div className="w-[153.85%] h-[153.85%] origin-top-left scale-[0.65]">
                     <iframe
-                      src="https://mini-notes-six.vercel.app"
+                      src={project.liveUrl}
                       className="h-full w-full"
                       title="Live Webapp Preview"
                       loading="lazy"

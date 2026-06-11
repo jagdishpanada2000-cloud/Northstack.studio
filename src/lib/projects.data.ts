@@ -7,6 +7,7 @@ export type Project = {
   solution: string;
   stack: string[];
   results: string[];
+  liveUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -27,6 +28,7 @@ export const projects: Project[] = [
       "Generated exam-focused answers and revision notes instantly",
       "Improved study efficiency through AI-assisted content organization",
     ],
+    liveUrl: "https://mini-notes-six.vercel.app",
   },
   {
     slug: "campusos",
@@ -54,5 +56,23 @@ export const projects: Project[] = [
       "Improved communication between students, teachers, and management",
       "Enabled faster access to academic and operational data through AI-assisted search and filtering",
     ],
+  },
+  {
+    slug: "way2-journey",
+    index: "03",
+    title: "Way2Journey",
+    description:
+      "A modern landing page for a tours and travels agency, showcasing destinations, packages, and travel experiences with a sleek, conversion-focused design.",
+    problem:
+      "Travel agencies struggle to present their offerings in a compelling, digital-first format that drives bookings and builds trust with potential travelers.",
+    solution:
+      "Designed and developed a visually rich, responsive landing page with destination showcases, package listings, and seamless booking flow integration, optimized for conversions.",
+    stack: ["Next.js", "TypeScript", "Tailwind", "Vercel"],
+    results: [
+      "Modern, mobile-first travel booking experience",
+      "Clear presentation of packages and destinations",
+      "Optimized for search engines and conversions",
+    ],
+    liveUrl: "https://way2-journey.vercel.app",
   },
 ];
