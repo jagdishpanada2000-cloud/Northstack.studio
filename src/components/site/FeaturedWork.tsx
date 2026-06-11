@@ -132,6 +132,19 @@ export function FeaturedWork() {
                       />
                     </div>
                   </div>
+                ) : p.index === "03" ? (
+                  <div className="lg:col-span-3">
+                    <div className="relative aspect-video w-full rounded-2xl overflow-hidden glow-soft">
+                      <video
+                        src="https://res.cloudinary.com/dwta5v9wi/video/upload/v1781180363/0611_gzyc3q.mp4"
+                        className="h-full w-full object-cover"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                      />
+                    </div>
+                  </div>
                 ) : (
                   <div className="lg:col-span-3">
                     <ScreenshotPlaceholder />
