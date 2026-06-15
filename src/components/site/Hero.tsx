@@ -27,9 +27,9 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.05, ease: "easeOut" }}
             className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-[-0.04em] leading-[1.02]"
           >
-            Building AI Products
+            AI Product Development
             <br />
-            <span className="text-secondary">That People Actually Use.</span>
+            <span className="text-secondary">For Startups &amp; SaaS.</span>
           </motion.h1>
 
           <motion.p
@@ -38,8 +38,9 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
             className="mt-7 max-w-xl text-base sm:text-lg text-secondary leading-relaxed"
           >
-            We design and develop AI-powered web applications, automation systems, and modern SaaS
-            products for startups and businesses.
+            WebsCraft builds custom AI-powered SaaS platforms, web applications, and business
+            automation systems for startups and growing businesses. We take your idea from concept
+            to launch in weeks — not months.
           </motion.p>
 
           <motion.div
@@ -49,11 +50,17 @@ export function Hero() {
             className="mt-9 flex flex-wrap items-center gap-3"
           >
             <a
+              href="/#contact"
+              className="group inline-flex items-center gap-2 rounded-full bg-white text-background px-6 py-3 text-sm font-medium transition hover:bg-white/90"
+            >
+              Get a Free Project Estimate
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </a>
+            <a
               href="#work"
-              className="group inline-flex items-center gap-2 rounded-full bg-white text-background px-5 py-3 text-sm font-medium transition hover:bg-white/90"
+              className="group inline-flex items-center gap-2 rounded-full border border-white/20 text-white px-5 py-3 text-sm font-medium transition hover:bg-white/10"
             >
               View Work
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
           </motion.div>
         </div>
@@ -73,6 +80,8 @@ export function Hero() {
               muted
               loop
               playsInline
+              title="AI-powered SaaS dashboard demo by WebsCraft"
+              aria-label="Demo of an AI-powered SaaS dashboard built by WebsCraft"
             />
           </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 export function CTA() {
   return (
@@ -37,6 +38,22 @@ export function CTA() {
           We take on a small number of partners each quarter. Tell us about your product and we'll
           get back within 24 hours.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="mt-10"
+        >
+          <a
+            href="mailto:hello@webscraft.studio"
+            className="group inline-flex items-center gap-2 rounded-full bg-white text-background px-8 py-4 text-base font-medium transition hover:bg-white/90 shadow-[0_0_24px_rgba(255,255,255,0.25)] hover:shadow-[0_0_32px_rgba(255,255,255,0.4)]"
+          >
+            Tell Us About Your Project
+            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

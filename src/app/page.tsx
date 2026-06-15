@@ -6,16 +6,17 @@ import { Services } from "@/components/site/Services";
 import { Process } from "@/components/site/Process";
 import { WhyUs } from "@/components/site/WhyUs";
 import { CTA } from "@/components/site/CTA";
+import { FAQ } from "@/components/site/FAQ";
 import { Footer } from "@/components/site/Footer";
 
 export const metadata: Metadata = {
-  title: "WebsCraft — AI Products, SaaS & Automation Studio",
+  title: "WebsCraft — AI Product Development Studio for Startups & SaaS",
   description:
-    "We design and develop AI-powered web applications, automation systems, and modern SaaS products for startups and businesses.",
+    "WebsCraft builds custom AI-powered SaaS platforms, web applications, and automation systems for startups and growing businesses. From concept to launch in weeks.",
   openGraph: {
-    title: "WebsCraft — AI Products, SaaS & Automation Studio",
+    title: "WebsCraft — AI Product Development Studio for Startups & SaaS",
     description:
-      "Building AI products that people actually use. A modern studio for AI, SaaS, and automation.",
+      "Custom AI-powered SaaS, web apps, and automation systems built for startups. Ship in weeks, not months.",
   },
 };
 
@@ -34,6 +35,7 @@ export default function HomePage() {
         <Process />
       </section>
       <WhyUs />
+      <FAQ />
       <CTA />
       <Footer />
     </main>

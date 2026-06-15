@@ -109,6 +109,8 @@ export function FeaturedWork() {
                         muted
                         loop
                         playsInline
+                        title="AI analytics dashboard demo"
+                        aria-label="Demo video of an AI-powered analytics dashboard built by WebsCraft"
                       />
                       <div
                         className="absolute inset-0 pointer-events-none"
@@ -129,6 +131,8 @@ export function FeaturedWork() {
                         muted
                         loop
                         playsInline
+                        title="SaaS platform dashboard demo"
+                        aria-label="Demo video of a custom SaaS platform built by WebsCraft"
                       />
                     </div>
                   </div>
@@ -142,6 +146,8 @@ export function FeaturedWork() {
                         muted
                         loop
                         playsInline
+                        title="Travel booking webapp demo"
+                        aria-label="Demo video of a travel booking web application built by WebsCraft"
                       />
                     </div>
                   </div>
