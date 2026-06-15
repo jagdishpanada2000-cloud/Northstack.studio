@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://northstack.studio
+Host: https://webscraft.studio
 
 # Sitemaps
-Sitemap: https://northstack.studio/sitemap.xml
+Sitemap: https://webscraft.studio/sitemap.xml

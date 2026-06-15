@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Providers } from "./providers";
 import "./globals.css";
 
-const siteUrl = "https://northstack.studio";
+const siteUrl = "https://webscraft.studio";
 
 export const metadata: Metadata = {
   title: "WebsCraft — AI Product Development Studio for Startups & SaaS",
