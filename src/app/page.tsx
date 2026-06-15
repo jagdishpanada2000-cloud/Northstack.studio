@@ -9,11 +9,11 @@ import { CTA } from "@/components/site/CTA";
 import { Footer } from "@/components/site/Footer";
 
 export const metadata: Metadata = {
-  title: "Northstack — AI Products, SaaS & Automation Studio",
+  title: "WebsCraft — AI Products, SaaS & Automation Studio",
   description:
     "We design and develop AI-powered web applications, automation systems, and modern SaaS products for startups and businesses.",
   openGraph: {
-    title: "Northstack — AI Products, SaaS & Automation Studio",
+    title: "WebsCraft — AI Products, SaaS & Automation Studio",
     description:
       "Building AI products that people actually use. A modern studio for AI, SaaS, and automation.",
   },

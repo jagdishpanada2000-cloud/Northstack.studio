@@ -13,7 +13,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
-  const title = project ? `${project.title} — Northstack` : "Project — Northstack";
+  const title = project ? `${project.title} — WebsCraft` : "Project — WebsCraft";
   const description = project?.description ?? "Explore our featured work.";
   return {
     title,
