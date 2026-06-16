@@ -16,7 +16,7 @@ export function ProjectDetail({ project }: { project: Project }) {
         >
           <Link
             href="/#work"
-            className="inline-flex items-center gap-2 text-sm text-secondary hover:text-foreground transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-secondary hover:text-primary transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to projects
@@ -50,17 +50,17 @@ export function ProjectDetail({ project }: { project: Project }) {
               rel="noopener noreferrer"
               className="block group"
             >
-              <div className="relative rounded-2xl border border-border overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.12)] transition-shadow duration-300 group-hover:shadow-[0_0_60px_rgba(255,255,255,0.25)]">
-                <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-border bg-white/[0.02]">
+              <div className="relative rounded-2xl border border-border overflow-hidden shadow-[0_0_40px_rgba(37,99,235,0.08)] transition-shadow duration-300 group-hover:shadow-[0_0_60px_rgba(37,99,235,0.15)]">
+                <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-border bg-black/[0.02]">
                   <span className="h-2.5 w-2.5 rounded-full bg-red-500/60" />
                   <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/60" />
                   <span className="h-2.5 w-2.5 rounded-full bg-green-500/60" />
-                  <div className="ml-3 flex-1 max-w-[280px] rounded-md bg-white/[0.04] px-3 py-1 text-xs text-secondary truncate">
+                  <div className="ml-3 flex-1 max-w-[280px] rounded-md bg-black/[0.04] px-3 py-1 text-xs text-secondary truncate">
                     {new URL(project.liveUrl).hostname}
                   </div>
                 </div>
                 {/* Desktop: scaled preview, Mobile: full-width scrollable preview */}
-                <div className="hidden md:block aspect-video w-full bg-[var(--surface)] overflow-hidden">
+                <div className="hidden md:block aspect-video bg-[var(--surface)] overflow-hidden">
                   <div className="w-[153.85%] h-[153.85%] origin-top-left scale-[0.65]">
                     <iframe
                       src={project.liveUrl}
@@ -72,7 +72,7 @@ export function ProjectDetail({ project }: { project: Project }) {
                   </div>
                 </div>
                 <div
-                  className="md:hidden w-full bg-[var(--surface)] overflow-y-auto"
+                  className="md:hidden bg-[var(--surface)] overflow-y-auto"
                   style={{ height: "80vh" }}
                 >
                   <iframe
@@ -83,11 +83,11 @@ export function ProjectDetail({ project }: { project: Project }) {
                     style={{ border: "none" }}
                   />
                 </div>
-                <div className="absolute inset-0 bg-transparent group-hover:bg-white/[0.03] transition-colors" />
+                <div className="absolute inset-0 bg-transparent group-hover:bg-black/[0.02] transition-colors" />
               </div>
               <div className="mt-3 flex items-center gap-2 text-sm">
                 <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-secondary group-hover:text-foreground transition-colors">
+                <span className="text-secondary group-hover:text-primary transition-colors">
                   Open live webapp &rarr;
                 </span>
               </div>
@@ -103,12 +103,12 @@ export function ProjectDetail({ project }: { project: Project }) {
         >
           <div>
             <h2 className="text-xs uppercase tracking-[0.18em] text-secondary mb-4">Problem</h2>
-            <p className="text-lg text-white/90 leading-relaxed">{project.problem}</p>
+            <p className="text-lg text-foreground/90 leading-relaxed">{project.problem}</p>
           </div>
 
           <div>
             <h2 className="text-xs uppercase tracking-[0.18em] text-secondary mb-4">Solution</h2>
-            <p className="text-lg text-white/90 leading-relaxed">{project.solution}</p>
+            <p className="text-lg text-foreground/90 leading-relaxed">{project.solution}</p>
           </div>
 
           <div>
@@ -117,7 +117,7 @@ export function ProjectDetail({ project }: { project: Project }) {
               {project.stack.map((t) => (
                 <span
                   key={t}
-                  className="rounded-full border border-border bg-white/[0.03] px-4 py-1.5 text-sm text-secondary"
+                  className="rounded-full border border-border bg-black/[0.03] px-4 py-1.5 text-sm text-secondary"
                 >
                   {t}
                 </span>
@@ -131,7 +131,7 @@ export function ProjectDetail({ project }: { project: Project }) {
               {project.results.map((r) => (
                 <div
                   key={r}
-                  className="rounded-xl border border-border bg-white/[0.02] px-5 py-4 text-sm text-white/90"
+                  className="rounded-xl border border-border bg-black/[0.02] px-5 py-4 text-sm text-foreground/90"
                 >
                   {r}
                 </div>

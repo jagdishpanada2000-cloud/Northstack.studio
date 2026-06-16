@@ -45,17 +45,17 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.06, ease: "easeOut" }}
-              className="group card-surface p-8 hover:[border-color:var(--hover-border)] hover:bg-white/[0.03] relative overflow-hidden"
+              className="group card-surface p-8 hover:[border-color:var(--hover-border)] hover:bg-black/[0.02] relative overflow-hidden"
             >
               <div
                 aria-hidden
                 className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"
                 style={{
-                  background: "radial-gradient(circle, rgba(255,255,255,0.08), transparent 60%)",
+                  background: "radial-gradient(circle, rgba(37,99,235,0.04), transparent 60%)",
                 }}
               />
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-white/[0.04]">
-                <s.icon className="h-5 w-5 text-white" />
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-black/[0.04]">
+                <s.icon className="h-5 w-5 text-foreground" />
               </div>
               <h3 className="mt-6 text-xl font-semibold tracking-tight">{s.title}</h3>
               <p className="mt-2 text-secondary leading-relaxed">{s.desc}</p>

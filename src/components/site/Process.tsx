@@ -31,11 +31,11 @@ export function Process() {
 
         <div ref={ref} className="relative pl-10 sm:pl-16">
           {/* track */}
-          <div className="absolute left-3 sm:left-6 top-2 bottom-2 w-px bg-white/10" />
+          <div className="absolute left-3 sm:left-6 top-2 bottom-2 w-px bg-border" />
           {/* animated fill */}
           <motion.div
             style={{ height }}
-            className="absolute left-3 sm:left-6 top-2 w-px bg-white"
+            className="absolute left-3 sm:left-6 top-2 w-px bg-primary"
           />
 
           <div className="space-y-14">
@@ -48,7 +48,7 @@ export function Process() {
                 transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
                 className="relative"
               >
-                <div className="absolute -left-[27px] sm:-left-[42px] top-1.5 h-3 w-3 rounded-full bg-white ring-4 ring-background" />
+                <div className="absolute -left-[27px] sm:-left-[42px] top-1.5 h-3 w-3 rounded-full bg-primary ring-4 ring-background" />
                 <div className="text-xs uppercase tracking-[0.18em] text-secondary">
                   Step 0{i + 1}
                 </div>

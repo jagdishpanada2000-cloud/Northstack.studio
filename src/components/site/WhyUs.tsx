@@ -53,8 +53,8 @@ export function WhyUs() {
               whileHover={{ y: -4 }}
               className="card-surface p-6 hover:[border-color:var(--hover-border)]"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-white/[0.04]">
-                <it.icon className="h-4.5 w-4.5 text-white" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-black/[0.04]">
+                <it.icon className="h-4.5 w-4.5 text-foreground" />
               </div>
               <h3 className="mt-5 text-lg font-semibold tracking-tight">{it.title}</h3>
               <p className="mt-2 text-sm text-secondary leading-relaxed">{it.desc}</p>

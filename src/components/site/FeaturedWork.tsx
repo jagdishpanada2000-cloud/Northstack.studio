@@ -9,25 +9,25 @@ function ScreenshotPlaceholder() {
   return (
     <div className="relative aspect-[4/3] w-full rounded-2xl border border-border bg-[var(--surface)] overflow-hidden glow-soft">
       <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border">
-        <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
-        <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
-        <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
+        <span className="h-2.5 w-2.5 rounded-full bg-black/10" />
+        <span className="h-2.5 w-2.5 rounded-full bg-black/10" />
+        <span className="h-2.5 w-2.5 rounded-full bg-black/10" />
       </div>
       <div className="p-5 grid grid-cols-4 gap-3 h-full">
         <div className="space-y-2">
-          <div className="h-6 rounded bg-white/[0.06]" />
-          <div className="h-16 rounded bg-white/[0.04]" />
-          <div className="h-10 rounded bg-white/[0.04]" />
-          <div className="h-10 rounded bg-white/[0.04]" />
+          <div className="h-6 rounded bg-black/[0.06]" />
+          <div className="h-16 rounded bg-black/[0.04]" />
+          <div className="h-10 rounded bg-black/[0.04]" />
+          <div className="h-10 rounded bg-black/[0.04]" />
         </div>
         <div className="col-span-3 space-y-3">
           <div className="grid grid-cols-3 gap-3">
-            <div className="h-14 rounded bg-white/[0.06]" />
-            <div className="h-14 rounded bg-white/[0.04]" />
-            <div className="h-14 rounded bg-white/[0.04]" />
+            <div className="h-14 rounded bg-black/[0.06]" />
+            <div className="h-14 rounded bg-black/[0.04]" />
+            <div className="h-14 rounded bg-black/[0.04]" />
           </div>
-          <div className="h-32 rounded bg-gradient-to-br from-white/[0.08] to-white/[0.02] border border-border" />
-          <div className="h-8 rounded bg-white/[0.04]" />
+          <div className="h-32 rounded bg-gradient-to-br from-black/[0.06] to-black/[0.02] border border-border" />
+          <div className="h-8 rounded bg-black/[0.04]" />
         </div>
       </div>
     </div>
@@ -70,7 +70,7 @@ export function FeaturedWork() {
                     {p.stack.map((t) => (
                       <span
                         key={t}
-                        className="rounded-full border border-border bg-white/[0.03] px-3 py-1 text-xs text-secondary"
+                        className="rounded-full border border-border bg-black/[0.03] px-3 py-1 text-xs text-secondary"
                       >
                         {t}
                       </span>
@@ -81,7 +81,7 @@ export function FeaturedWork() {
                     {p.results.slice(0, 3).map((r) => (
                       <div
                         key={r}
-                        className="rounded-xl border border-border bg-white/[0.02] px-3 py-3 text-xs text-white/90"
+                        className="rounded-xl border border-border bg-black/[0.02] px-3 py-3 text-xs text-foreground/90"
                       >
                         {r}
                       </div>
@@ -92,7 +92,7 @@ export function FeaturedWork() {
                     <Button
                       asChild
                       variant="default"
-                      className="rounded-full px-8 py-6 text-base shadow-[0_0_24px_rgba(255,255,255,0.25)] hover:shadow-[0_0_32px_rgba(255,255,255,0.4)] transition-shadow"
+                      className="rounded-full px-8 py-6 text-base shadow-[0_0_24px_rgba(37,99,235,0.2)] hover:shadow-[0_0_32px_rgba(37,99,235,0.35)] transition-shadow"
                     >
                       <Link href={`/work/${p.slug}`}>Explore Project</Link>
                     </Button>

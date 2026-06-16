@@ -19,20 +19,20 @@ export function Nav() {
     >
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2">
-          <div className="h-5 w-5 rounded-md bg-white" />
+          <div className="h-5 w-5 rounded-md bg-foreground" />
           <span className="font-semibold tracking-tight">WebsCraft</span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-secondary">
-          <a href="#work" className="hover:text-white transition">
+          <a href="#work" className="hover:text-primary transition">
             Work
           </a>
-          <a href="#services" className="hover:text-white transition">
+          <a href="#services" className="hover:text-primary transition">
             Services
           </a>
-          <a href="#process" className="hover:text-white transition">
+          <a href="#process" className="hover:text-primary transition">
             Process
           </a>
-          <a href="#contact" className="hover:text-white transition">
+          <a href="#contact" className="hover:text-primary transition">
             Contact
           </a>
         </nav>

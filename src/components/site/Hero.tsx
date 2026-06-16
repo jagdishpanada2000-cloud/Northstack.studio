@@ -15,7 +15,7 @@ export function Hero() {
         aria-hidden
         className="absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[900px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at center, rgba(255,255,255,0.08), transparent 60%)",
+          background: "radial-gradient(ellipse at center, rgba(37,99,235,0.06), transparent 60%)",
         }}
       />
 
@@ -51,14 +51,14 @@ export function Hero() {
           >
             <a
               href="/#contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-white text-background px-6 py-3 text-sm font-medium transition hover:bg-white/90"
+              className="group inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-medium transition hover:bg-primary/90"
             >
               Get a Free Project Estimate
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
               href="#work"
-              className="group inline-flex items-center gap-2 rounded-full border border-white/20 text-white px-5 py-3 text-sm font-medium transition hover:bg-white/10"
+              className="group inline-flex items-center gap-2 rounded-full border border-border text-foreground px-5 py-3 text-sm font-medium transition hover:bg-black/5"
             >
               View Work
             </a>
@@ -91,7 +91,7 @@ export function Hero() {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="absolute -left-4 -bottom-4 rounded-2xl border border-border bg-card px-4 py-3 text-xs text-secondary glow-soft"
           >
-            <div className="text-white font-medium">+ 38% conversion</div>
+            <div className="text-foreground font-medium">+ 38% conversion</div>
             <div>vs. previous build</div>
           </motion.div>
         </motion.div>
