@@ -66,28 +66,6 @@ export function FeaturedWork() {
                   </h3>
                   <p className="mt-4 text-secondary text-lg leading-relaxed">{p.description}</p>
 
-                  <div className="mt-8 flex flex-wrap gap-2">
-                    {p.stack.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full border border-border bg-black/[0.03] px-3 py-1 text-xs text-secondary"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="mt-6 grid grid-cols-3 gap-3">
-                    {p.results.slice(0, 3).map((r) => (
-                      <div
-                        key={r}
-                        className="rounded-xl border border-border bg-black/[0.02] px-3 py-3 text-xs text-foreground/90"
-                      >
-                        {r}
-                      </div>
-                    ))}
-                  </div>
-
                   <div className="mt-8">
                     <Button
                       asChild

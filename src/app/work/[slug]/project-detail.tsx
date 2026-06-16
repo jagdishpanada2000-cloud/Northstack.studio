@@ -110,34 +110,6 @@ export function ProjectDetail({ project }: { project: Project }) {
             <h2 className="text-xs uppercase tracking-[0.18em] text-secondary mb-4">Solution</h2>
             <p className="text-lg text-foreground/90 leading-relaxed">{project.solution}</p>
           </div>
-
-          <div>
-            <h2 className="text-xs uppercase tracking-[0.18em] text-secondary mb-4">Tech Stack</h2>
-            <div className="flex flex-wrap gap-2">
-              {project.stack.map((t) => (
-                <span
-                  key={t}
-                  className="rounded-full border border-border bg-black/[0.03] px-4 py-1.5 text-sm text-secondary"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h2 className="text-xs uppercase tracking-[0.18em] text-secondary mb-4">Results</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {project.results.map((r) => (
-                <div
-                  key={r}
-                  className="rounded-xl border border-border bg-black/[0.02] px-5 py-4 text-sm text-foreground/90"
-                >
-                  {r}
-                </div>
-              ))}
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>
