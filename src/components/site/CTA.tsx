@@ -50,7 +50,7 @@ export function CTA() {
           className="mt-10"
         >
           <a
-            href="mailto:hello@webscraft.studio"
+            href="mailto:hello@webscraft.in"
             className="group inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 text-base font-medium transition hover:bg-primary/90 shadow-[0_0_24px_rgba(37,99,235,0.3)] hover:shadow-[0_0_32px_rgba(37,99,235,0.5)]"
           >
             Tell Us About Your Project

@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
 import "./globals.css";
 
-const siteUrl = "https://webscraft.studio";
+const siteUrl = "https://webscraft.in";
 
 export const metadata: Metadata = {
   title: "WebsCraft — AI Product Development Studio for Startups & SaaS",
@@ -12,6 +12,16 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   alternates: { canonical: "/" },
   authors: [{ name: "WebsCraft" }],
+  keywords: [
+    "AI development",
+    "SaaS development",
+    "web development studio",
+    "AI product development",
+    "custom SaaS platform",
+    "startup development",
+    "automation systems",
+    "Next.js development",
+  ],
   openGraph: {
     title: "WebsCraft — AI Product Development Studio for Startups & SaaS",
     description:
@@ -27,13 +37,26 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
+const jsonLdOrganization = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "WebsCraft",
   url: siteUrl,
+  logo: `${siteUrl}/icon.svg`,
   description: "AI product development studio for startups and SaaS companies.",
   serviceType: ["AI Application Development", "SaaS Development", "Automation Systems"],
+};
+
+const jsonLdWebsite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "WebsCraft",
+  url: siteUrl,
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -48,7 +71,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebsite) }}
         />
       </head>
       <body>
