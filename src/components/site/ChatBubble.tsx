@@ -39,8 +39,8 @@ export function ChatBubble() {
 
     try {
       const history = messages.map((m) => ({
-        role: m.role === "assistant" ? "model" : "user",
-        parts: [{ text: m.text }],
+        role: m.role === "assistant" ? "assistant" : "user",
+        content: m.text,
       }));
 
       const res = await fetch("/api/chat", {
