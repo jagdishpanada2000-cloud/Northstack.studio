@@ -1,54 +1,58 @@
 import { NextRequest, NextResponse } from "next/server";
 
+const MODEL = "gemini-2.0-flash";
+
 export async function POST(req: NextRequest) {
   const { message, history } = await req.json();
 
-  const apiKey = process.env.XAI_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
 
   if (!apiKey) {
     return NextResponse.json(
-      { error: "xAI API key is not configured. Set XAI_API_KEY in your environment." },
+      { error: "Gemini API key not configured. Set GEMINI_API_KEY in your environment." },
       { status: 500 },
     );
   }
 
-  const messages = [
-    {
-      role: "system",
-      content:
-        "You are WebsCraft AI, a helpful assistant for WebsCraft — an AI product development studio. Answer questions about their services (AI development, SaaS, automation, web development). Be concise and helpful. If asked about something outside your knowledge, say you'll connect them with the team.",
-    },
-    ...(history ?? []),
-    { role: "user", content: message },
+  const contents = [
+    ...(history ?? []).map((m: { role: string; content: string }) => ({
+      role: m.role === "assistant" ? "model" : "user",
+      parts: [{ text: m.content }],
+    })),
+    { role: "user", parts: [{ text: message }] },
   ];
 
-  const requestBody = { model: "grok-4", messages, stream: false };
-
-  const res = await fetch("https://api.x.ai/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
+  const res = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${apiKey}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents,
+        systemInstruction: {
+          parts: [
+            {
+              text: "You are WebsCraft AI, a helpful assistant for WebsCraft — an AI product development studio. Answer questions about their services (AI development, SaaS, automation, web development). Be concise and helpful. If asked about something outside your knowledge, say you'll connect them with the team.",
+            },
+          ],
+        },
+      }),
     },
-    body: JSON.stringify(requestBody),
-  });
+  );
 
   const data = await res.json();
 
   if (!res.ok) {
-    console.error("xAI API error:", res.status, JSON.stringify(data));
-    const errMsg =
-      typeof data?.error === "string"
-        ? data.error
-        : (data?.error?.message ?? `xAI API returned ${res.status}`);
+    console.error("Gemini API error:", res.status, JSON.stringify(data));
+    const errMsg = data?.error?.message ?? `Gemini API returned ${res.status}`;
     return NextResponse.json({ error: errMsg }, { status: res.status });
   }
 
-  const text = data?.choices?.[0]?.message?.content;
+  const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
   if (!text) {
-    console.error("Unexpected xAI response:", JSON.stringify(data));
-    return NextResponse.json({ error: "No response from xAI" }, { status: 500 });
+    console.error("Unexpected Gemini response:", JSON.stringify(data));
+    return NextResponse.json({ error: "No response from Gemini" }, { status: 500 });
   }
 
   return NextResponse.json({ text });
