@@ -22,26 +22,27 @@ export async function POST(req: NextRequest) {
     { role: "user", content: message },
   ];
 
+  const requestBody = { model: "grok-2", messages, stream: false };
+
   const res = await fetch("https://api.x.ai/v1/chat/completions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${apiKey}`,
     },
-    body: JSON.stringify({
-      model: "grok-2-latest",
-      messages,
-    }),
+    body: JSON.stringify(requestBody),
   });
 
   const data = await res.json();
 
   if (!res.ok) {
     console.error("xAI API error:", res.status, JSON.stringify(data));
-    return NextResponse.json(
-      { error: data?.error?.message ?? `xAI API returned ${res.status}` },
-      { status: res.status },
-    );
+    console.error("Request body:", JSON.stringify(requestBody));
+    const errMsg =
+      typeof data?.error === "string"
+        ? data.error
+        : (data?.error?.message ?? `xAI API returned ${res.status}`);
+    return NextResponse.json({ error: errMsg }, { status: res.status });
   }
 
   const text = data?.choices?.[0]?.message?.content;
