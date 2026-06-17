@@ -49,7 +49,8 @@ export function ChatBubble() {
         body: JSON.stringify({ message: userMsg.text, history }),
       });
       const data = await res.json();
-      setMessages((m) => [...m, { role: "assistant", text: data.text }]);
+      const reply = data.text ?? data.error ?? "Something went wrong. Please try again.";
+      setMessages((m) => [...m, { role: "assistant", text: reply }]);
     } catch {
       setMessages((m) => [
         ...m,
