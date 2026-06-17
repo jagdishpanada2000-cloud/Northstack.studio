@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     { role: "user", content: message },
   ];
 
-  const requestBody = { model: "grok-2", messages, stream: false };
+  const requestBody = { model: "grok-4", messages, stream: false };
 
   const res = await fetch("https://api.x.ai/v1/chat/completions", {
     method: "POST",
@@ -37,7 +37,6 @@ export async function POST(req: NextRequest) {
 
   if (!res.ok) {
     console.error("xAI API error:", res.status, JSON.stringify(data));
-    console.error("Request body:", JSON.stringify(requestBody));
     const errMsg =
       typeof data?.error === "string"
         ? data.error
