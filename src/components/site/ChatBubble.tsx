@@ -86,17 +86,17 @@ export function ChatBubble() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="fixed bottom-24 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] rounded-2xl border border-border bg-[#0A0A0A] shadow-[0_0_40px_rgba(37,99,235,0.15)] overflow-hidden"
+            className="fixed bottom-24 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] rounded-2xl border border-border bg-white shadow-[0_0_40px_rgba(37,99,235,0.15)] overflow-hidden"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
+            <div className="flex items-center justify-between px-4 py-3 border-b border-border">
               <div className="flex items-center gap-2">
                 <Bot className="h-4 w-4 text-primary" />
-                <span className="text-sm font-medium text-white">WebsCraft AI</span>
+                <span className="text-sm font-medium text-[#0A0A0A]">WebsCraft AI</span>
               </div>
               <button
                 onClick={() => setOpen(false)}
-                className="text-white/60 hover:text-white transition-colors"
+                className="text-[#525252] hover:text-[#0A0A0A] transition-colors"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -115,7 +115,7 @@ export function ChatBubble() {
                     className={`max-w-[80%] rounded-xl px-3 py-2 text-sm leading-relaxed ${
                       m.role === "user"
                         ? "bg-primary text-primary-foreground"
-                        : "bg-white/5 text-white/90"
+                        : "bg-gray-100 text-[#0A0A0A]"
                     }`}
                   >
                     {m.text}
@@ -132,7 +132,7 @@ export function ChatBubble() {
                   <div className="mt-1 shrink-0 h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center">
                     <Bot className="h-3.5 w-3.5 text-primary" />
                   </div>
-                  <div className="bg-white/5 rounded-xl px-3 py-2 text-sm text-white/60">
+                  <div className="bg-gray-100 rounded-xl px-3 py-2 text-sm text-[#525252]">
                     <span className="animate-pulse">Thinking...</span>
                   </div>
                 </div>
@@ -141,7 +141,7 @@ export function ChatBubble() {
             </div>
 
             {/* Input */}
-            <div className="border-t border-white/10 px-4 py-3">
+            <div className="border-t border-border px-4 py-3">
               <div className="flex gap-2">
                 <input
                   ref={inputRef}
@@ -150,7 +150,7 @@ export function ChatBubble() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
                   placeholder="Ask anything..."
-                  className="flex-1 rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm text-white placeholder-white/40 outline-none focus:border-primary/50 transition-colors"
+                  className="flex-1 rounded-xl bg-gray-100 border border-border px-3 py-2 text-sm text-[#0A0A0A] placeholder-[#A3A3A3] outline-none focus:border-primary/50 transition-colors"
                 />
                 <button
                   onClick={send}
