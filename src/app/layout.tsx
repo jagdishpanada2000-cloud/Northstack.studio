@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
+import { ChatBubble } from "@/components/site/ChatBubble";
 import "./globals.css";
 
 const siteUrl = "https://webscraft.in";
@@ -80,6 +81,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body>
         <Providers>{children}</Providers>
+        <ChatBubble />
       </body>
     </html>
   );
