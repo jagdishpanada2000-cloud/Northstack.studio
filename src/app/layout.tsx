@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     "WebsCraft builds custom AI-powered SaaS platforms, web applications, and automation systems for startups and growing businesses. From concept to launch in weeks.",
   metadataBase: new URL(siteUrl),
   alternates: { canonical: "/" },
+  icons: "/logo.png",
   authors: [{ name: "WebsCraft" }],
   keywords: [
     "AI development",
