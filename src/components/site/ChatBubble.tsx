@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, Bot, User } from "lucide-react";
+import ReactMarkdown from "react-markdown";
 
 interface Message {
   role: "user" | "assistant";
@@ -112,13 +113,13 @@ export function ChatBubble() {
                     </div>
                   )}
                   <div
-                    className={`max-w-[80%] rounded-xl px-3 py-2 text-sm leading-relaxed ${
+                    className={`max-w-[80%] rounded-xl px-3 py-2 text-sm leading-relaxed [&_p]:mb-1 [&_ul]:list-disc [&_ul]:pl-4 [&_ol]:list-decimal [&_ol]:pl-4 ${
                       m.role === "user"
                         ? "bg-primary text-primary-foreground"
                         : "bg-gray-100 text-[#0A0A0A]"
                     }`}
                   >
-                    {m.text}
+                    <ReactMarkdown>{m.text}</ReactMarkdown>
                   </div>
                   {m.role === "user" && (
                     <div className="mt-1 shrink-0 h-6 w-6 rounded-full bg-primary flex items-center justify-center">
