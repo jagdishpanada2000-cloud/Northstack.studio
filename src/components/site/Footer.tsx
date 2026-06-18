@@ -10,6 +10,15 @@ export function Footer() {
         <div className="text-xs text-[color:var(--muted-foreground)]">
           © {new Date().getFullYear()} WebsCraft
         </div>
+
+        <a
+          href="https://instagram.com/webscraft.in"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-[color:var(--muted-foreground)] hover:text-primary transition-colors"
+        >
+          Instagram
+        </a>
       </div>
     </footer>
   );
