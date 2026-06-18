@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, Bot, User } from "lucide-react";
+import { MessageCircle, Phone, X, Send, Bot, User } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
 interface Message {
@@ -101,12 +101,30 @@ export function ChatBubble() {
                 <Bot className="h-4 w-4 text-primary" />
                 <span className="text-sm font-medium text-[#0A0A0A]">WebsCraft AI</span>
               </div>
-              <button
-                onClick={() => setOpen(false)}
-                className="text-[#525252] hover:text-[#0A0A0A] transition-colors"
-              >
-                <X className="h-4 w-4" />
-              </button>
+              <div className="flex items-center gap-1.5">
+                <a
+                  href="https://wa.me/919326345546"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 rounded-lg bg-[#25D366]/10 px-2.5 py-1.5 text-xs font-medium text-[#25D366] hover:bg-[#25D366]/20 transition-colors"
+                >
+                  <MessageCircle className="h-3.5 w-3.5" />
+                  Chat
+                </a>
+                <a
+                  href="tel:+919326345546"
+                  className="flex items-center gap-1 rounded-lg bg-primary/10 px-2.5 py-1.5 text-xs font-medium text-primary hover:bg-primary/20 transition-colors"
+                >
+                  <Phone className="h-3.5 w-3.5" />
+                  Call
+                </a>
+                <button
+                  onClick={() => setOpen(false)}
+                  className="text-[#525252] hover:text-[#0A0A0A] transition-colors ml-1"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
             </div>
 
             {/* Messages */}
