@@ -19,7 +19,7 @@ export function Nav() {
     >
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2">
-          <div className="h-5 w-5 rounded-md bg-foreground" />
+          <img src="/logo.png" alt="WebsCraft" className="h-7 w-auto" />
           <span className="font-semibold tracking-tight">WebsCraft</span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-secondary">
