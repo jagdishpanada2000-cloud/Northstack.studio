@@ -50,10 +50,12 @@ export function Hero() {
             className="mt-9 flex flex-wrap items-center gap-3"
           >
             <a
-              href="/#contact"
+              href="https://wa.me/919326345546"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 text-sm font-medium transition hover:bg-primary/90"
             >
-              Get a Free Project Estimate
+              Tell Us About Your Project
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
