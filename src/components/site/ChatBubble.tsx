@@ -24,6 +24,12 @@ export function ChatBubble() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
+    const handler = () => setOpen(true);
+    window.addEventListener("open-chat", handler);
+    return () => window.removeEventListener("open-chat", handler);
+  }, []);
+
+  useEffect(() => {
     if (open) inputRef.current?.focus();
   }, [open]);
 

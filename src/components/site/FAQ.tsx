@@ -64,6 +64,15 @@ export function FAQ() {
             </motion.div>
           ))}
         </Accordion.Root>
+
+        <div className="mt-12 text-center">
+          <button
+            onClick={() => window.dispatchEvent(new Event("open-chat"))}
+            className="rounded-xl bg-primary text-primary-foreground px-6 py-3 text-sm font-medium hover:opacity-90 transition-opacity"
+          >
+            Still have questions? Chat with AI
+          </button>
+        </div>
       </div>
     </section>
   );
