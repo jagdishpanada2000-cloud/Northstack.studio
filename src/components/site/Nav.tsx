@@ -35,6 +35,14 @@ export function Nav() {
           <a href="#contact" className="hover:text-primary transition">
             Contact
           </a>
+          <a
+            href="https://wa.me/919326345546"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl bg-primary text-primary-foreground px-4 py-1.5 text-sm font-medium hover:opacity-90 transition-opacity"
+          >
+            Pricing
+          </a>
         </nav>
       </div>
     </header>
