@@ -5,9 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Send } from "lucide-react";
 
 export function CTA() {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [project, setProject] = useState("");
   const [sent, setSent] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
@@ -15,12 +13,10 @@ export function CTA() {
     await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, project }),
+      body: JSON.stringify({ email }),
     });
     setSent(true);
-    setName("");
     setEmail("");
-    setProject("");
   };
 
   return (
@@ -61,47 +57,32 @@ export function CTA() {
           get back within 24 hours.
         </motion.p>
 
-        {/* Contact form */}
         <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="mx-auto mt-10 max-w-lg space-y-4 text-left"
+          className="mx-auto mt-10 max-w-md"
         >
-          <input
-            type="text"
-            placeholder="Your name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-primary/50 transition-colors"
-          />
-          <input
-            type="email"
-            placeholder="Your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-primary/50 transition-colors"
-          />
-          <textarea
-            placeholder="Tell us about your project..."
-            value={project}
-            onChange={(e) => setProject(e.target.value)}
-            required
-            rows={4}
-            className="w-full rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-primary/50 transition-colors resize-none"
-          />
-          <button
-            type="submit"
-            disabled={sent}
-            className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-primary-foreground px-6 py-3 text-sm font-medium transition hover:bg-primary/90 disabled:opacity-50"
-          >
-            {sent ? "Sent!" : "Send"}
-            <Send className="h-4 w-4" />
-          </button>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="flex-1 rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-sm text-white placeholder-white/50 outline-none focus:border-primary/70 focus:bg-white/15 transition-all"
+            />
+            <button
+              type="submit"
+              disabled={sent}
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary text-primary-foreground px-5 py-3 text-sm font-medium transition hover:bg-primary/90 disabled:opacity-50 shrink-0"
+            >
+              {sent ? "Sent!" : "Send"}
+              <Send className="h-4 w-4" />
+            </button>
+          </div>
         </motion.form>
 
         <motion.div
