@@ -28,7 +28,7 @@ export function CTA() {
         >
           Have an idea?
           <br />
-          <span className="text-secondary">Let's build it.</span>
+          <span className="text-white/80">Let's build it.</span>
         </motion.h2>
 
         <motion.p
