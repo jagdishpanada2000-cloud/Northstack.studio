@@ -110,7 +110,7 @@ export function CTA() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 text-white px-6 py-3 text-sm font-medium transition hover:bg-white/5"
             >
-              Chat on WhatsApp
+              Tell Us About Your Project
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
