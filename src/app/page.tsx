@@ -5,6 +5,7 @@ import { FeaturedWork } from "@/components/site/FeaturedWork";
 import { Services } from "@/components/site/Services";
 import { Process } from "@/components/site/Process";
 import { WhyUs } from "@/components/site/WhyUs";
+import { About } from "@/components/site/About";
 import { CTA } from "@/components/site/CTA";
 import { FAQ } from "@/components/site/FAQ";
 import { Footer } from "@/components/site/Footer";
@@ -35,6 +36,7 @@ export default function HomePage() {
         <Process />
       </section>
       <WhyUs />
+      <About />
       <FAQ />
       <CTA />
       <Footer />

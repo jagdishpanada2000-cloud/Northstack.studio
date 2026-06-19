@@ -7,18 +7,29 @@ export function Footer() {
           <span className="font-semibold tracking-tight">WebsCraft</span>
         </div>
 
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 text-xs text-[color:var(--muted-foreground)]">
+          <a href="mailto:hello@webscraft.in" className="hover:text-primary transition-colors">
+            hello@webscraft.in
+          </a>
+          <a
+            href="https://instagram.com/webscraft.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors"
+          >
+            Instagram
+          </a>
+          <a href="/privacy" className="hover:text-primary transition-colors">
+            Privacy
+          </a>
+          <a href="/terms" className="hover:text-primary transition-colors">
+            Terms
+          </a>
+        </div>
+
         <div className="text-xs text-[color:var(--muted-foreground)]">
           © {new Date().getFullYear()} WebsCraft
         </div>
-
-        <a
-          href="https://instagram.com/webscraft.in"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs text-[color:var(--muted-foreground)] hover:text-primary transition-colors"
-        >
-          Instagram
-        </a>
       </div>
     </footer>
   );
