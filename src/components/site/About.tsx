@@ -8,13 +8,13 @@ const founders = [
     name: "Sarthak Waghmare",
     role: "Founder",
     bio: "Product engineer with experience building AI-powered platforms and SaaS products from the ground up. Focused on shipping fast, iterating with real feedback, and keeping teams small and direct.",
-    linkedin: "https://linkedin.com/in/sarthak-wagmare",
+    linkedin: "https://www.linkedin.com/in/sarthak-waghmare-4a0341389/",
   },
   {
     name: "Jagdish Panada",
     role: "Co-Founder",
     bio: "Full-stack developer specializing in AI integration and automation systems. Passionate about turning complex technical challenges into clean, maintainable products that scale.",
-    linkedin: "https://linkedin.com/in/jagdishpanada",
+    linkedin: "https://www.linkedin.com/in/jagdish-panada-192a32366/",
   },
 ];
 
