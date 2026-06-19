@@ -5,7 +5,7 @@ import { Linkedin } from "lucide-react";
 
 const founders = [
   {
-    name: "Sarthak Wagmare",
+    name: "Sarthak Waghmare",
     role: "Founder",
     bio: "Product engineer with experience building AI-powered platforms and SaaS products from the ground up. Focused on shipping fast, iterating with real feedback, and keeping teams small and direct.",
     linkedin: "https://linkedin.com/in/sarthak-wagmare",
