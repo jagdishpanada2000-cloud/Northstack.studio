@@ -31,11 +31,13 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "WebsCraft",
     type: "website",
+    images: [{ url: "/og-banner.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "WebsCraft — AI Product Development Studio",
     description: "Custom SaaS, AI apps, and automation for startups. Ship in weeks, not months.",
+    images: ["/og-banner.png"],
   },
 };
 
@@ -49,7 +51,7 @@ const jsonLdOrganization = {
   "@type": "Organization",
   name: "WebsCraft",
   url: siteUrl,
-  logo: `${siteUrl}/icon.svg`,
+  logo: `${siteUrl}/logo.png`,
   description: "AI product development studio for startups and SaaS companies.",
   serviceType: ["AI Application Development", "SaaS Development", "Automation Systems"],
 };
