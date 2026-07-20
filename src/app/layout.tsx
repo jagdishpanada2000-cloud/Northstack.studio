@@ -14,10 +14,10 @@ const inter = Inter({
 });
 
 const siteUrl = "https://webscraft.in";
-const siteName = "WebsCraft";
-const defaultTitle = "WebsCraft — AI Product Development Studio for Startups & SaaS";
+
+const defaultTitle = "WebsCraft — Custom Websites, AI Automation & Software for Indian Businesses";
 const defaultDescription =
-  "WebsCraft builds custom AI-powered SaaS platforms, web applications, and automation systems for startups and growing businesses. From concept to launch in weeks.";
+  "WebsCraft builds custom websites, AI chatbots and automation, SaaS platforms, business dashboards, ecommerce stores, restaurant ordering systems, and business software for startups, local businesses, and growing companies in India.";
 
 export const metadata: Metadata = {
   title: {
@@ -30,31 +30,34 @@ export const metadata: Metadata = {
   icons: "/logo.png",
   authors: [{ name: "WebsCraft" }],
   keywords: [
-    "AI development studio",
-    "SaaS development agency",
-    "custom AI applications",
-    "web development for startups",
-    "AI product development",
-    "webscraft",
-    "startup MVP development",
-    "AI automation agency",
-    "Next.js development services",
-    "AI integration services",
+    "web development India",
+    "AI automation services",
+    "custom website development",
+    "SaaS development India",
+    "business dashboard development",
+    "ecommerce website India",
+    "restaurant website",
+    "custom business software",
+    "AI chatbot India",
+    "WhatsApp automation",
+    "small business website",
+    "startup development India",
+    "WebsCraft",
+    "webscraft.in",
   ],
   openGraph: {
     title: defaultTitle,
-    description:
-      "Custom AI-powered SaaS, web apps, and automation systems built for startups. Ship in weeks, not months.",
+    description: defaultDescription,
     url: siteUrl,
-    siteName,
+    siteName: "WebsCraft",
     type: "website",
     locale: "en_IN",
     images: [{ url: "/og-banner.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "WebsCraft — AI Product Development Studio",
-    description: "Custom SaaS, AI apps, and automation for startups. Ship in weeks, not months.",
+    title: "WebsCraft — Custom Websites, AI Automation & Software",
+    description: defaultDescription,
     images: ["/og-banner.png"],
   },
   other: {
@@ -68,144 +71,75 @@ export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "WebsCraft",
-  url: siteUrl,
-  logo: `${siteUrl}/logo.png`,
-  description: defaultDescription,
-  email: "hello@webscraft.in",
-  telephone: "+919326345546",
-  sameAs: [
-    "https://www.linkedin.com/in/sarthak-waghmare-4a0341389/",
-    "https://www.linkedin.com/in/jagdish-panada-192a32366/",
-    "https://instagram.com/webscraft.in",
-  ],
-  foundingDate: "2025",
-  serviceType: [
-    "AI Application Development",
-    "SaaS Development",
-    "Automation Systems",
-    "Web Development",
-  ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+919326345546",
-    contactType: "sales",
-    email: "hello@webscraft.in",
-    availableLanguage: ["English", "Hindi"],
-  },
-};
-
-const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "WebsCraft",
-  url: siteUrl,
-  description: defaultDescription,
-};
-
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How long does it take to build an AI-powered SaaS product?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Most MVPs ship in 4–8 weeks. Complex platforms with custom AI models typically take 8–14 weeks. We work in weekly sprints with continuous demos so you always know where things stand.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What technologies do you use?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We build on Next.js, TypeScript, Supabase, and PostgreSQL. For AI, we integrate OpenAI, Anthropic, and custom models deployed on Vercel or AWS. Every stack is chosen for speed, type safety, and scalability.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do you only work with startups?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We work with funded startups, early-stage founders, and established businesses launching new AI products. If you're building something new and need to move fast, we're a fit.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How much does a custom AI application cost?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Every project is scoped individually. We work with you to define the requirements and give you a fixed-price estimate before any work begins. Contact us for a free estimate based on your specific needs.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What does the engagement process look like?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "We start with a discovery sprint to align on goals, then move into design, development, and AI integration. You get weekly demos, a dedicated Slack channel, and direct access to the team building your product.",
-      },
-    },
-  ],
-};
-
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "AI Application Development",
-  provider: { "@type": "Organization", name: "WebsCraft" },
-  description: "Custom GPT integrations, RAG pipelines, and AI workflows tailored to your product.",
-  areaServed: "India",
-};
-
-const sarthakJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Sarthak Waghmare",
-  jobTitle: "Founder",
-  url: "https://www.linkedin.com/in/sarthak-waghmare-4a0341389/",
-  worksFor: { "@type": "Organization", name: "WebsCraft" },
-  description:
-    "Product engineer building AI-powered platforms and SaaS products from the ground up.",
-};
-
-const jagdishJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Jagdish Panada",
-  jobTitle: "Co-Founder",
-  url: "https://www.linkedin.com/in/jagdish-panada-192a32366/",
-  worksFor: { "@type": "Organization", name: "WebsCraft" },
-  description: "Full-stack developer specializing in AI integration and automation systems.",
-};
-
-const contactPageJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  name: "Contact WebsCraft",
-  description: "Get in touch with WebsCraft for AI development, SaaS, and automation projects.",
-  url: `${siteUrl}/#contact`,
-  mainEntity: {
+const jsonLdSchemas = [
+  {
+    "@context": "https://schema.org",
     "@type": "Organization",
     name: "WebsCraft",
-    telephone: "+919326345546",
+    url: siteUrl,
+    logo: `${siteUrl}/logo.png`,
+    description: defaultDescription,
     email: "hello@webscraft.in",
-    contactType: "sales",
+    telephone: "+919326345546",
+    sameAs: [
+      "https://www.linkedin.com/in/sarthak-waghmare-4a0341389/",
+      "https://www.linkedin.com/in/jagdish-panada-192a32366/",
+      "https://instagram.com/webscraft.in",
+    ],
+    foundingDate: "2025",
+    serviceType: [
+      "Web Development",
+      "AI Automation",
+      "SaaS Development",
+      "Dashboard Development",
+      "Ecommerce Development",
+      "Restaurant Websites",
+      "Custom Software Development",
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+919326345546",
+      contactType: "sales",
+      email: "hello@webscraft.in",
+      availableLanguage: ["English", "Hindi"],
+    },
   },
-};
-
-const jsonLdSchemas = [
-  organizationJsonLd,
-  websiteJsonLd,
-  faqJsonLd,
-  serviceJsonLd,
-  sarthakJsonLd,
-  jagdishJsonLd,
-  contactPageJsonLd,
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "WebsCraft",
+    url: siteUrl,
+    description: defaultDescription,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contact WebsCraft",
+    description: "Get in touch with WebsCraft for custom development services.",
+    url: `${siteUrl}/contact`,
+    mainEntity: {
+      "@type": "Organization",
+      name: "WebsCraft",
+      telephone: "+919326345546",
+      email: "hello@webscraft.in",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Sarthak Waghmare",
+    jobTitle: "Founder",
+    url: "https://www.linkedin.com/in/sarthak-waghmare-4a0341389/",
+    worksFor: { "@type": "Organization", name: "WebsCraft" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Jagdish Panada",
+    jobTitle: "Co-Founder",
+    url: "https://www.linkedin.com/in/jagdish-panada-192a32366/",
+    worksFor: { "@type": "Organization", name: "WebsCraft" },
+  },
 ];
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -219,6 +153,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
           />
         ))}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="font-sans antialiased">
         <a

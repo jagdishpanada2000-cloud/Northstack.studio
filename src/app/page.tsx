@@ -8,6 +8,7 @@ import { About } from "@/components/site/About";
 import { CTA } from "@/components/site/CTA";
 import { FAQ } from "@/components/site/FAQ";
 import { Footer } from "@/components/site/Footer";
+import { LatestPosts } from "@/components/site/LatestPosts";
 
 export default function HomePage() {
   return (
@@ -25,6 +26,7 @@ export default function HomePage() {
       </section>
       <WhyUs />
       <About />
+      <LatestPosts />
       <FAQ />
       <CTA />
       <Footer />

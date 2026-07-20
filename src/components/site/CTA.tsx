@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function CTA() {
   return (
@@ -26,7 +27,7 @@ export function CTA() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-[-0.04em] leading-[1.02]"
         >
-          Have an idea?
+          Have a project in mind?
           <br />
           <span className="text-white/80">Let's build it.</span>
         </motion.h2>
@@ -38,8 +39,8 @@ export function CTA() {
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
           className="mx-auto mt-6 max-w-xl text-secondary text-lg"
         >
-          We take on a small number of partners each quarter. Tell us about your product and we'll
-          get back within 24 hours.
+          Tell us what you need — a website, AI automation, SaaS platform, dashboard, or custom
+          software — and we'll provide a free estimate within 24 hours.
         </motion.p>
 
         <motion.div
@@ -47,7 +48,7 @@ export function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          className="mt-10"
+          className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
           <a
             href="https://wa.me/919326345546"
@@ -55,9 +56,15 @@ export function CTA() {
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-8 py-4 text-base font-medium transition hover:bg-primary/90 shadow-[0_0_24px_rgba(37,99,235,0.3)] hover:shadow-[0_0_32px_rgba(37,99,235,0.5)]"
           >
-            Tell Us About Your Project
+            Get a Free Quote
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
           </a>
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-2 rounded-full border border-border text-foreground px-6 py-4 text-base font-medium transition hover:bg-white/5"
+          >
+            View Contact Options
+          </Link>
         </motion.div>
       </div>
     </section>

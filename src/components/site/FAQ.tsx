@@ -3,27 +3,28 @@
 import { motion } from "framer-motion";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 const faqs = [
   {
-    q: "How long does it take to build an AI-powered SaaS product?",
-    a: "Most MVPs ship in 4–8 weeks. Complex platforms with custom AI models typically take 8–14 weeks. We work in weekly sprints with continuous demos so you always know where things stand.",
+    q: "What does WebsCraft build?",
+    a: "We build custom websites, AI chatbots and automation systems, SaaS platforms, business dashboards, ecommerce stores, restaurant online ordering systems, and custom business software. We work with startups, local businesses, and growing companies across India.",
   },
   {
-    q: "What technologies do you use?",
-    a: "We build on Next.js, TypeScript, Supabase, and PostgreSQL. For AI, we integrate OpenAI, Anthropic, and custom models deployed on Vercel or AWS. Every stack is chosen for speed, type safety, and scalability.",
+    q: "How much does a custom website cost?",
+    a: "Website costs vary based on complexity. A simple business site starts at ₹15,000. Ecommerce stores start at ₹25,000. Custom platforms start at ₹50,000. Every project receives a fixed-price quote before work begins. Contact us for a free estimate.",
   },
   {
-    q: "Do you only work with startups?",
-    a: "We work with funded startups, early-stage founders, and established businesses launching new AI products. If you're building something new and need to move fast, we're a fit.",
+    q: "How long does it take to build a website or software?",
+    a: "A standard business website takes 2–3 weeks. AI chatbots take 1–2 weeks. Ecommerce stores take 3–5 weeks. SaaS platforms take 6–14 weeks for an MVP. Custom software takes 4–10 weeks depending on complexity.",
   },
   {
-    q: "How much does a custom AI application cost?",
-    a: "Every project is scoped individually. We'll work with you to define the requirements and give you a fixed-price estimate before any work begins. Contact us for a free estimate based on your specific needs.",
+    q: "Do you work with small businesses or only startups?",
+    a: "We work with everyone. Startups, local businesses (restaurants, clinics, salons, agencies), and established companies launching new digital products. If you need a website, automation, or software built, we can help.",
   },
   {
-    q: "What does the engagement process look like?",
-    a: "We start with a discovery sprint to align on goals, then move into design, development, and AI integration. You get weekly demos, a dedicated Slack channel, and direct access to the team building your product.",
+    q: "How do I get started?",
+    a: "Contact us via WhatsApp at +91 93263 45546 or email hello@webscraft.in. Tell us about your project and we'll provide a free estimate within 24 hours. Once approved, we start building and show you progress every week.",
   },
 ];
 
@@ -72,6 +73,14 @@ export function FAQ() {
           >
             Still have questions? Chat with AI
           </button>
+          <div className="mt-4">
+            <Link
+              href="/contact"
+              className="text-sm text-secondary hover:text-primary transition-colors underline"
+            >
+              Or visit our contact page
+            </Link>
+          </div>
         </div>
       </div>
     </section>
