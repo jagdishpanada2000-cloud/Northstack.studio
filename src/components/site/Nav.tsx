@@ -76,13 +76,13 @@ export function Nav() {
         </button>
       </div>
       {mobileOpen && (
-        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-xl">
+        <div className="md:hidden bg-[#0A0A0A] border-t border-[#FFFFFF1A]">
           <div className="px-6 py-4 flex flex-col gap-3">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-secondary hover:text-primary transition-colors py-1"
+                className="text-sm text-[#A3A3A3] hover:text-white transition-colors py-1"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
