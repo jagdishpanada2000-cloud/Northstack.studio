@@ -2,8 +2,27 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 
+const siteUrl = "https://webscraft.in";
+
 export const metadata: Metadata = {
-  title: "Terms of Service — WebsCraft",
+  title: "Terms of Service",
+  description:
+    "WebsCraft Terms of Service — terms governing the use of our website and AI development, SaaS, and automation services.",
+  alternates: { canonical: "/terms" },
+  openGraph: {
+    title: "Terms of Service — WebsCraft",
+    description:
+      "WebsCraft Terms of Service — terms governing the use of our website and development services.",
+    url: `${siteUrl}/terms`,
+    siteName: "WebsCraft",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service — WebsCraft",
+    description:
+      "WebsCraft Terms of Service — terms governing the use of our website and development services.",
+  },
 };
 
 export default function TermsPage() {

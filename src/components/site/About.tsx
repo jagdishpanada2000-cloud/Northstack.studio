@@ -51,7 +51,7 @@ export function About() {
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="font-semibold tracking-tight">{person.name}</span>
+                  <h3 className="font-semibold tracking-tight">{person.name}</h3>
                   <span className="text-xs text-secondary bg-secondary/10 px-2 py-0.5 rounded-full">
                     {person.role}
                   </span>

@@ -22,7 +22,10 @@ export function Nav() {
           <img src="/logo.png" alt="WebsCraft" className="h-7 w-auto" />
           <span className="font-semibold tracking-tight">WebsCraft</span>
         </a>
-        <nav className="hidden md:flex items-center gap-8 text-sm text-secondary">
+        <nav
+          className="hidden md:flex items-center gap-8 text-sm text-secondary"
+          aria-label="Main navigation"
+        >
           <a href="#work" className="hover:text-primary transition">
             Work
           </a>
@@ -31,6 +34,9 @@ export function Nav() {
           </a>
           <a href="#process" className="hover:text-primary transition">
             Process
+          </a>
+          <a href="#faq" className="hover:text-primary transition">
+            FAQ
           </a>
           <a href="#contact" className="hover:text-primary transition">
             Contact

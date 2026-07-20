@@ -79,6 +79,9 @@ export function ChatBubble() {
       {/* Bubble button */}
       <button
         onClick={() => setOpen(true)}
+        aria-expanded={open}
+        aria-controls="chat-panel"
+        aria-label="Open AI chat"
         className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-[#0A0A0A] text-white px-5 py-3 text-sm font-medium shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] transition-shadow duration-300"
       >
         <MessageCircle className="h-4 w-4" />
@@ -93,6 +96,10 @@ export function ChatBubble() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
+            id="chat-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-label="WebsCraft AI chat"
             className="fixed bottom-24 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] rounded-2xl border border-border bg-white shadow-[0_0_40px_rgba(37,99,235,0.15)] overflow-hidden"
           >
             {/* Header */}
@@ -175,6 +182,7 @@ export function ChatBubble() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
                   placeholder="Ask anything..."
+                  aria-label="Type your message"
                   className="flex-1 rounded-xl bg-gray-100 border border-border px-3 py-2 text-sm text-[#0A0A0A] placeholder-[#A3A3A3] outline-none focus:border-primary/50 transition-colors"
                 />
                 <button

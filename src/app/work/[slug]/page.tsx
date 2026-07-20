@@ -10,6 +10,8 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+const siteUrl = "https://webscraft.in";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
@@ -23,6 +25,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       url: `/work/${slug}`,
+      siteName: "WebsCraft",
+      type: "article",
+      images: [{ url: "/og-banner.png", width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/og-banner.png"],
     },
   };
 }
@@ -35,8 +46,22 @@ export default async function ProjectDetailPage({ params }: Props) {
     notFound();
   }
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+      { "@type": "ListItem", position: 2, name: "Work", item: `${siteUrl}/#work` },
+      { "@type": "ListItem", position: 3, name: project.title, item: `${siteUrl}/work/${slug}` },
+    ],
+  };
+
   return (
     <main className="bg-background text-foreground min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Nav />
       <ProjectDetail project={project} />
       <Footer />

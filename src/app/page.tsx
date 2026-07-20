@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { FeaturedWork } from "@/components/site/FeaturedWork";
@@ -10,20 +9,9 @@ import { CTA } from "@/components/site/CTA";
 import { FAQ } from "@/components/site/FAQ";
 import { Footer } from "@/components/site/Footer";
 
-export const metadata: Metadata = {
-  title: "WebsCraft — AI Product Development Studio for Startups & SaaS",
-  description:
-    "WebsCraft builds custom AI-powered SaaS platforms, web applications, and automation systems for startups and growing businesses. From concept to launch in weeks.",
-  openGraph: {
-    title: "WebsCraft — AI Product Development Studio for Startups & SaaS",
-    description:
-      "Custom AI-powered SaaS, web apps, and automation systems built for startups. Ship in weeks, not months.",
-  },
-};
-
 export default function HomePage() {
   return (
-    <main className="bg-background text-foreground">
+    <main id="main-content" className="bg-background text-foreground">
       <Nav />
       <Hero />
       <section id="work">

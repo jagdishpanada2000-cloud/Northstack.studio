@@ -2,8 +2,27 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 
+const siteUrl = "https://webscraft.in";
+
 export const metadata: Metadata = {
-  title: "Privacy Policy — WebsCraft",
+  title: "Privacy Policy",
+  description:
+    "WebsCraft Privacy Policy — how we collect, use, and protect your personal information when you use our website and services.",
+  alternates: { canonical: "/privacy" },
+  openGraph: {
+    title: "Privacy Policy — WebsCraft",
+    description:
+      "WebsCraft Privacy Policy — how we collect, use, and protect your personal information when you use our website and services.",
+    url: `${siteUrl}/privacy`,
+    siteName: "WebsCraft",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy — WebsCraft",
+    description:
+      "WebsCraft Privacy Policy — how we collect, use, and protect your personal information.",
+  },
 };
 
 export default function PrivacyPage() {
@@ -16,8 +35,9 @@ export default function PrivacyPage() {
 
         <div className="mt-10 space-y-6 text-sm text-secondary leading-relaxed">
           <p>
-            WebsCraft ("we", "our", "us") respects your privacy. This policy explains how we
-            collect, use, and protect your personal information when you use our website.
+            WebsCraft (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) respects your privacy. This
+            policy explains how we collect, use, and protect your personal information when you use
+            our website.
           </p>
 
           <h2 className="text-lg font-semibold text-foreground">Information We Collect</h2>
