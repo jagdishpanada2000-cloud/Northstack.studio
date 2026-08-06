@@ -54,14 +54,6 @@ export function Nav() {
             </span>
             AI Workshop
           </Link>
-          <a
-            href="https://wa.me/919326345546"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-xl bg-primary text-primary-foreground px-4 py-1.5 text-sm font-medium hover:opacity-90 transition-opacity"
-          >
-            Get a Quote
-          </a>
         </nav>
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -103,7 +95,7 @@ export function Nav() {
             ))}
             <Link
               href={WORKSHOP_URL}
-              className="rounded-full border border-pink-500/50 bg-pink-500/10 px-4 py-2 text-sm font-semibold text-pink-400 shadow-[0_0_20px_rgba(236,72,153,0.45)] transition-colors py-1"
+              className="text-sm font-semibold text-pink-400 drop-shadow-[0_0_8px_rgba(236,72,153,0.8)] transition-colors py-1"
               onClick={() => setMobileOpen(false)}
             >
               AI Workshop
