@@ -12,6 +12,9 @@ dist
 .next
 *.local
 
+# Standalone prototype app (merged into /workshop routes)
+/prototype/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

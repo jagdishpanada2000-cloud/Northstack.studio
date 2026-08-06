@@ -1,0 +1,19 @@
+.workshop-root h1,
+.workshop-root h2,
+.workshop-root h3,
+.workshop-root h4,
+.workshop-root h5,
+.workshop-root h6 {
+  font-family: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
+  text-wrap: balance;
+}
+
+.workshop-root p {
+  text-wrap: pretty;
+}
+
+.workshop-root :focus-visible {
+  outline: 2px solid #f472b6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}

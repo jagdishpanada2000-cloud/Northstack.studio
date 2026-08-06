@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-const WORKSHOP_URL = "https://prototype-beige-psi.vercel.app";
+const WORKSHOP_URL = "/workshop";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -84,10 +84,8 @@ export function Nav() {
                 role="menu"
                 className="absolute left-0 top-full mt-2 w-64 rounded-xl bg-[#0A0A0A] text-white border border-[#FFFFFF1A] shadow-2xl py-2 z-50"
               >
-                <a
+                <Link
                   href={WORKSHOP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   onClick={() => setWorkshopOpen(false)}
                   className="flex items-center justify-between px-4 py-2.5 text-sm text-[#A3A3A3] hover:text-white hover:bg-white/5 transition-colors"
                 >
@@ -105,7 +103,7 @@ export function Nav() {
                       d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             )}
           </div>
@@ -157,7 +155,7 @@ export function Nav() {
               </Link>
             ))}
             <Link
-              href={`${WORKSHOP_URL}`}
+              href={WORKSHOP_URL}
               className="text-sm text-white font-medium transition-colors py-1 flex items-center justify-between"
               onClick={() => setMobileOpen(false)}
             >
