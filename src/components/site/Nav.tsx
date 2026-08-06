@@ -46,12 +46,8 @@ export function Nav() {
           ))}
           <Link
             href={WORKSHOP_URL}
-            className="inline-flex items-center gap-1.5 rounded-full border border-pink-500/50 bg-pink-500/10 px-4 py-1.5 text-sm font-semibold text-pink-500 shadow-[0_0_20px_rgba(236,72,153,0.45),inset_0_0_12px_rgba(236,72,153,0.15)] transition-all hover:bg-pink-500/20 hover:text-pink-400 hover:shadow-[0_0_28px_rgba(236,72,153,0.65),inset_0_0_16px_rgba(236,72,153,0.2)]"
+            className="inline-flex items-center rounded-full border border-pink-500/50 bg-pink-500/10 px-4 py-1.5 text-sm font-semibold text-pink-500 shadow-[0_0_20px_rgba(236,72,153,0.45),inset_0_0_12px_rgba(236,72,153,0.15)] transition-all hover:bg-pink-500/20 hover:text-pink-400 hover:shadow-[0_0_28px_rgba(236,72,153,0.65),inset_0_0_16px_rgba(236,72,153,0.2)]"
           >
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-pink-400 opacity-75" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-pink-500" />
-            </span>
             AI Workshop
           </Link>
         </nav>
