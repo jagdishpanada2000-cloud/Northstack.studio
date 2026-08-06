@@ -11,6 +11,7 @@ node_modules
 dist
 .next
 *.local
+*.tsbuildinfo
 
 # Standalone prototype app (merged into /workshop routes)
 /prototype/
