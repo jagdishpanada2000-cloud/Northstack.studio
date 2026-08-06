@@ -1,16 +1,31 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+
+const WORKSHOP_URL = "https://prototype-beige-psi.vercel.app";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [workshopOpen, setWorkshopOpen] = useState(false);
+  const workshopRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onClickOutside = (e: MouseEvent) => {
+      if (workshopRef.current && !workshopRef.current.contains(e.target as Node)) {
+        setWorkshopOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onClickOutside);
+    return () => document.removeEventListener("mousedown", onClickOutside);
   }, []);
 
   const links = [
@@ -41,6 +56,55 @@ export function Nav() {
               {link.label}
             </Link>
           ))}
+          <div className="relative" ref={workshopRef}>
+            <button
+              type="button"
+              onClick={() => setWorkshopOpen((open) => !open)}
+              className="flex items-center gap-1 hover:text-primary transition-colors"
+              aria-expanded={workshopOpen}
+              aria-haspopup="menu"
+            >
+              AI Workshop
+              <svg
+                className={`h-3.5 w-3.5 transition-transform ${workshopOpen ? "rotate-180" : ""}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </button>
+            {workshopOpen && (
+              <div
+                role="menu"
+                className="absolute left-0 top-full mt-2 w-64 rounded-xl bg-[#0A0A0A] text-white border border-[#FFFFFF1A] shadow-2xl py-2 z-50"
+              >
+                <a
+                  href={WORKSHOP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setWorkshopOpen(false)}
+                  className="flex items-center justify-between px-4 py-2.5 text-sm text-[#A3A3A3] hover:text-white hover:bg-white/5 transition-colors"
+                >
+                  Enter AI Workshop
+                  <svg
+                    className="h-3.5 w-3.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
+              </div>
+            )}
+          </div>
           <a
             href="https://wa.me/919326345546"
             target="_blank"
@@ -88,6 +152,26 @@ export function Nav() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href={`${WORKSHOP_URL}`}
+              className="text-sm text-white font-medium transition-colors py-1 flex items-center justify-between"
+              onClick={() => setMobileOpen(false)}
+            >
+              AI Workshop
+              <svg
+                className="h-3.5 w-3.5 text-[#A3A3A3]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                />
+              </svg>
+            </Link>
             <a
               href="https://wa.me/919326345546"
               target="_blank"
