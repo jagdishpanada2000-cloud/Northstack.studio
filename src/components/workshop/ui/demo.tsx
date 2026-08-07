@@ -18,7 +18,7 @@ export function SplineSceneBasic() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-            className="text-[clamp(2rem,8vw,4.5rem)] lg:text-[clamp(3rem,5.5vw,4.5rem)] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-pink-400 via-pink-500 to-fuchsia-600 drop-shadow-[0_0_30px_rgba(236,72,153,0.55)] tracking-tight leading-[1.08]"
+            className="text-[clamp(2rem,8vw,4.5rem)] lg:text-[clamp(3rem,5.5vw,4.5rem)] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-pink-200 via-pink-300 to-fuchsia-400 drop-shadow-[0_0_35px_rgba(236,72,153,0.6)] tracking-tight leading-[1.08]"
           >
             Future Skills
           </motion.h1>
