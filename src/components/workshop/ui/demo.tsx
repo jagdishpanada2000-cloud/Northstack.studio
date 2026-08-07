@@ -4,7 +4,7 @@ import React from "react";
 import { SplineScene } from "@/components/workshop/ui/splite";
 import { Spotlight } from "@/components/workshop/ui/spotlight";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Users } from "lucide-react";
+import { ArrowRight, Users } from "lucide-react";
 import Link from "next/link";
 
 export function SplineSceneBasic() {
@@ -14,21 +14,11 @@ export function SplineSceneBasic() {
 
       <div className="flex flex-col lg:flex-row w-full flex-1 relative z-10">
         <div className="flex-1 p-6 sm:p-8 md:p-12 lg:p-14 relative z-10 flex flex-col justify-center items-start text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 text-neutral-200 text-xs font-medium mb-6 backdrop-blur-md"
-          >
-            <Sparkles className="size-3.5 text-white animate-pulse" />
-            <span className="text-pink-400 font-semibold">WebScraft</span>
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-            className="text-[clamp(2rem,8vw,4.5rem)] lg:text-[clamp(3rem,5.5vw,4.5rem)] font-extrabold bg-clip-text text-transparent bg-gradient-to-b from-white via-neutral-100 to-neutral-400 tracking-tight leading-[1.08]"
+            className="text-[clamp(2rem,8vw,4.5rem)] lg:text-[clamp(3rem,5.5vw,4.5rem)] font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-pink-400 via-pink-500 to-fuchsia-600 drop-shadow-[0_0_30px_rgba(236,72,153,0.55)] tracking-tight leading-[1.08]"
           >
             Future Skills
           </motion.h1>
