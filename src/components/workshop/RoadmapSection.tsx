@@ -2,6 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { ParticleEmitter } from "@/components/workshop/ParticleEmitter";
 import {
   Brain,
   ShieldAlert,
@@ -351,6 +352,7 @@ function WorkshopCard({
 
 export function RoadmapSection() {
   const timelineRef = useRef<HTMLDivElement>(null);
+  const headRef = useRef<HTMLDivElement>(null);
   const nodeEls = useRef<(HTMLDivElement | null)[]>([]);
   const reduced = useReducedMotion();
 
@@ -424,6 +426,19 @@ export function RoadmapSection() {
           style={{ scaleY: reduced ? 1 : scrollYProgress }}
         />
 
+        {/* Layer 3 — glowing head riding the tip of the accent line */}
+        <motion.div
+          ref={headRef}
+          aria-hidden="true"
+          className="absolute left-[8px] sm:left-[14px] md:left-1/2 md:-translate-x-1/2 -translate-y-1/2 z-20 flex items-center justify-center pointer-events-none"
+          style={{ top: useTransform(scrollYProgress, (v) => `${v * 100}%`) }}
+        >
+          <span className="relative flex h-3 w-3">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-pink-400 opacity-50" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-pink-400 shadow-[0_0_14px_rgba(236,72,153,0.95)]" />
+          </span>
+        </motion.div>
+
         <div className="space-y-10 relative">
           {workshops.map((item, index) => {
             const isEven = index % 2 === 0;
@@ -460,6 +475,8 @@ export function RoadmapSection() {
           })}
         </div>
       </div>
+
+      <ParticleEmitter headRef={headRef} reduced={reduced === true} />
     </section>
   );
 }
