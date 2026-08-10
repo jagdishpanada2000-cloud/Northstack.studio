@@ -387,7 +387,7 @@ export function RoadmapSection() {
     i < activeIndex ? "done" : i === activeIndex ? "active" : "idle";
 
   return (
-    <section id="roadmap" className="py-20 md:py-28 relative">
+    <section id="roadmap" className="w-full py-20 md:py-28 relative">
       <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
