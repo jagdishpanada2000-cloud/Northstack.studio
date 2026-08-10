@@ -280,7 +280,7 @@ function WorkshopCard({
             className="will-change-transform"
           >
             <div
-              className={`group relative p-6 rounded-3xl border transition-colors duration-300 flex flex-col h-full backdrop-blur-2xl ${
+              className={`group relative p-6 md:p-8 rounded-3xl border transition-colors duration-300 flex flex-col h-full backdrop-blur-2xl ${
                 isActive
                   ? "bg-white/[0.08] border-pink-400/50 shadow-[0_10px_50px_rgba(236,72,153,0.25),inset_0_1px_0_rgba(255,255,255,0.15)]"
                   : "bg-white/[0.04] border-white/15 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] hover:border-white/30 hover:bg-white/[0.07]"
@@ -331,8 +331,8 @@ function WorkshopCard({
                 {workshop.description}
               </p>
 
-              <div className="space-y-2.5 pt-3 border-t border-white/10 mt-auto">
-                <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block mb-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2.5 pt-3 border-t border-white/10 mt-auto">
+                <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block mb-2 md:col-span-2">
                   {workshop.label}
                 </span>
                 {workshop.topics.map((topic, i) => (
@@ -416,7 +416,7 @@ export function RoadmapSection() {
         </motion.p>
       </div>
 
-      <div ref={timelineRef} className="max-w-4xl mx-auto relative">
+      <div ref={timelineRef} className="max-w-4xl md:max-w-6xl mx-auto relative">
         {/* Layer 1 — static gray line */}
         <div className="absolute left-[8px] sm:left-[14px] md:left-1/2 top-0 bottom-0 w-[2px] md:-translate-x-1/2 bg-white/10" />
 
