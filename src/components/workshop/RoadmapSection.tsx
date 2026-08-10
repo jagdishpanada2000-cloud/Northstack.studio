@@ -280,10 +280,10 @@ function WorkshopCard({
             className="will-change-transform"
           >
             <div
-              className={`group relative p-6 rounded-3xl border transition-colors duration-300 flex flex-col h-full ${
+              className={`group relative p-6 rounded-3xl border transition-colors duration-300 flex flex-col h-full backdrop-blur-2xl ${
                 isActive
-                  ? "bg-neutral-800/80 border-pink-400/40 shadow-[0_10px_50px_rgba(236,72,153,0.18)]"
-                  : "bg-neutral-900/70 border-white/10 shadow-xl hover:border-white/25 hover:bg-neutral-800/60"
+                  ? "bg-white/[0.08] border-pink-400/50 shadow-[0_10px_50px_rgba(236,72,153,0.25),inset_0_1px_0_rgba(255,255,255,0.15)]"
+                  : "bg-white/[0.04] border-white/15 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] hover:border-white/30 hover:bg-white/[0.07]"
               }`}
             >
               <div className="flex items-start justify-between gap-3 mb-4">
