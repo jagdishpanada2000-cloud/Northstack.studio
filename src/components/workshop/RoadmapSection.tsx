@@ -349,7 +349,7 @@ function WorkshopCard({
   );
 }
 
-export function RoadmapSection() {
+export function RoadmapSection({ background }: { background?: React.ReactNode }) {
   const timelineRef = useRef<HTMLDivElement>(null);
   const nodeEls = useRef<(HTMLDivElement | null)[]>([]);
   const reduced = useReducedMotion();
@@ -385,79 +385,83 @@ export function RoadmapSection() {
     i < activeIndex ? "done" : i === activeIndex ? "active" : "idle";
 
   return (
-    <section id="roadmap" className="py-20 md:py-28 relative">
-      <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-xs font-medium"
-        >
-          The Journey
-        </motion.div>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white"
-        >
-          8-Week AI Learning Journey
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto"
-        >
-          Eight 2-hour Sunday workshops taking you from AI foundations to real workplace mastery.
-        </motion.p>
-      </div>
+    <section id="roadmap" className="py-20 md:py-28 relative overflow-hidden">
+      {background}
 
-      <div ref={timelineRef} className="max-w-4xl mx-auto relative">
-        {/* Layer 1 — static gray line */}
-        <div className="absolute left-[8px] sm:left-[14px] md:left-1/2 top-0 bottom-0 w-[2px] md:-translate-x-1/2 bg-white/10" />
+      <div className="relative">
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300 text-xs font-medium"
+          >
+            The Journey
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white"
+          >
+            8-Week AI Learning Journey
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-neutral-400 text-base sm:text-lg max-w-2xl mx-auto"
+          >
+            Eight 2-hour Sunday workshops taking you from AI foundations to real workplace mastery.
+          </motion.p>
+        </div>
 
-        {/* Layer 2 — accent line driven by scroll progress (continuous) */}
-        <motion.div
-          className="absolute left-[8px] sm:left-[14px] md:left-1/2 top-0 bottom-0 w-[2px] md:-translate-x-1/2 origin-top bg-gradient-to-b from-pink-400 via-pink-500 to-fuchsia-600 will-change-transform"
-          style={{ scaleY: reduced ? 1 : scrollYProgress }}
-        />
+        <div ref={timelineRef} className="max-w-4xl mx-auto relative">
+          {/* Layer 1 — static gray line */}
+          <div className="absolute left-[8px] sm:left-[14px] md:left-1/2 top-0 bottom-0 w-[2px] md:-translate-x-1/2 bg-white/10" />
 
-        <div className="space-y-10 relative">
-          {workshops.map((item, index) => {
-            const isEven = index % 2 === 0;
-            const status = statusFor(index);
-            const isActive = index === activeIndex;
+          {/* Layer 2 — accent line driven by scroll progress (continuous) */}
+          <motion.div
+            className="absolute left-[8px] sm:left-[14px] md:left-1/2 top-0 bottom-0 w-[2px] md:-translate-x-1/2 origin-top bg-gradient-to-b from-pink-400 via-pink-500 to-fuchsia-600 will-change-transform"
+            style={{ scaleY: reduced ? 1 : scrollYProgress }}
+          />
 
-            return (
-              <div
-                key={item.num}
-                className={`relative flex flex-col md:flex-row items-center pl-8 sm:pl-12 md:pl-0 ${
-                  isEven ? "md:flex-row-reverse" : ""
-                }`}
-              >
-                <TimelineNode
-                  status={status}
-                  workshop={item}
-                  activeIndex={activeIndex}
-                  nodeRef={(el) => {
-                    nodeEls.current[index] = el;
-                  }}
-                  dataIndex={index}
-                />
+          <div className="space-y-10 relative">
+            {workshops.map((item, index) => {
+              const isEven = index % 2 === 0;
+              const status = statusFor(index);
+              const isActive = index === activeIndex;
 
-                <div className="w-full md:ml-0 md:w-[calc(50%-2.5rem)]">
-                  <WorkshopCard
+              return (
+                <div
+                  key={item.num}
+                  className={`relative flex flex-col md:flex-row items-center pl-8 sm:pl-12 md:pl-0 ${
+                    isEven ? "md:flex-row-reverse" : ""
+                  }`}
+                >
+                  <TimelineNode
+                    status={status}
                     workshop={item}
-                    index={index}
-                    isActive={isActive}
-                    reduced={reduced === true}
+                    activeIndex={activeIndex}
+                    nodeRef={(el) => {
+                      nodeEls.current[index] = el;
+                    }}
+                    dataIndex={index}
                   />
+
+                  <div className="w-full md:ml-0 md:w-[calc(50%-2.5rem)]">
+                    <WorkshopCard
+                      workshop={item}
+                      index={index}
+                      isActive={isActive}
+                      reduced={reduced === true}
+                    />
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

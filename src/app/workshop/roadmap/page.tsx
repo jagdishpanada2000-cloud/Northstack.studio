@@ -1,6 +1,7 @@
 import React from "react";
 import { PageHeader } from "@/components/workshop/PageHeader";
 import { RoadmapSection } from "@/components/workshop/RoadmapSection";
+import { SplineBackground } from "@/components/workshop/SplineBackground";
 import { WhoShouldAttendSection } from "@/components/workshop/WhoShouldAttendSection";
 import { PageNav } from "@/components/workshop/PageNav";
 
@@ -18,7 +19,7 @@ export default function RoadmapPage() {
         title="Your 7-Step AI Journey"
         description="A structured path from foundational concepts to hands-on exercises and advanced workplace automation."
       />
-      <RoadmapSection />
+      <RoadmapSection background={<SplineBackground />} />
       <WhoShouldAttendSection />
       <PageNav
         prev={{ title: "Home", href: "/workshop" }}
