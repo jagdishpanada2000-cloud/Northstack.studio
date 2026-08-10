@@ -11,6 +11,8 @@ interface Particle {
   life: number;
   maxLife: number;
   color: [number, number, number];
+  twinkle: number;
+  sparkle: boolean;
 }
 
 const MAX_PARTICLES = 600;
@@ -76,6 +78,8 @@ export function ParticleEmitter({
         life,
         maxLife: life,
         color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        twinkle: Math.random() * Math.PI * 2,
+        sparkle: Math.random() < 0.3,
       });
     };
 
@@ -125,11 +129,28 @@ export function ParticleEmitter({
         const t = p.life / p.maxLife;
         const fadeIn = t > 0.8 ? (1 - t) / 0.2 : 1;
         const fadeOut = t < 0.4 ? t / 0.4 : 1;
-        const alpha = fadeIn * fadeOut * 0.4;
+        const twinkle = 0.65 + 0.35 * Math.sin(p.twinkle + (p.maxLife - p.life) * 0.12);
+        const alpha = fadeIn * fadeOut * twinkle * 0.4;
         const [r8, g8, b8] = p.color;
+        const spark = p.sparkle ? Math.min(1, fadeIn * fadeOut * 2) * 0.5 : 0;
+        if (spark > 0.02) {
+          const arm = p.size * 3.2;
+          ctx.beginPath();
+          ctx.moveTo(p.x - arm, p.y);
+          ctx.lineTo(p.x + arm, p.y);
+          ctx.moveTo(p.x, p.y - arm);
+          ctx.lineTo(p.x, p.y + arm);
+          ctx.strokeStyle = `rgba(${r8},${g8},${b8},${alpha * 0.7})`;
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${r8},${g8},${b8},${alpha})`;
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size * 0.4, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${Math.min(1, alpha * 1.6)})`;
         ctx.fill();
       }
     };
