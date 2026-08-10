@@ -331,8 +331,8 @@ function WorkshopCard({
                 {workshop.description}
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2.5 pt-3 border-t border-white/10 mt-auto">
-                <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block mb-2 md:col-span-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-2.5 pt-3 border-t border-white/10 mt-auto">
+                <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest block mb-2 md:col-span-2 xl:col-span-3">
                   {workshop.label}
                 </span>
                 {workshop.topics.map((topic, i) => (
@@ -416,7 +416,7 @@ export function RoadmapSection() {
         </motion.p>
       </div>
 
-      <div ref={timelineRef} className="max-w-4xl md:max-w-6xl mx-auto relative">
+      <div ref={timelineRef} className="max-w-4xl md:max-w-7xl mx-auto relative">
         {/* Layer 1 — static gray line */}
         <div className="absolute left-[8px] sm:left-[14px] md:left-1/2 top-0 bottom-0 w-[2px] md:-translate-x-1/2 bg-white/10" />
 
