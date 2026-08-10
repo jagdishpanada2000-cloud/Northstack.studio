@@ -2,7 +2,6 @@
 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
-import { SplineScene } from "@/components/workshop/ui/splite";
 import {
   Brain,
   ShieldAlert,
@@ -15,8 +14,6 @@ import {
   CheckCircle2,
   ChevronRight,
 } from "lucide-react";
-
-const ROBOT_SCENE = "https://prod.spline.design/kEpfqRISwpVkW1n6/scene.splinecode";
 
 interface Workshop {
   num: string;
@@ -426,31 +423,6 @@ export function RoadmapSection() {
           className="absolute left-[8px] sm:left-[14px] md:left-1/2 top-0 bottom-0 w-[2px] md:-translate-x-1/2 origin-top bg-gradient-to-b from-pink-400 via-pink-500 to-fuchsia-600 will-change-transform"
           style={{ scaleY: reduced ? 1 : scrollYProgress }}
         />
-
-        {/* Desktop-only robot that glides beside the active card (opposite side) */}
-        <div className="hidden md:block absolute inset-0 pointer-events-none z-10">
-          <div className="sticky top-0 h-screen">
-            <motion.div
-              className="relative w-40 h-40 lg:w-48 lg:h-48 mx-auto"
-              initial={false}
-              animate={{ x: activeIndex % 2 === 0 ? -224 : 224 }}
-              transition={{
-                type: "spring",
-                stiffness: 55,
-                damping: 18,
-                mass: 1,
-              }}
-              style={{ top: "50%" }}
-            >
-              <div className="absolute inset-0 -translate-y-1/2">
-                <SplineScene
-                  scene={ROBOT_SCENE}
-                  className="w-full h-full drop-shadow-[0_0_40px_rgba(236,72,153,0.35)]"
-                />
-              </div>
-            </motion.div>
-          </div>
-        </div>
 
         <div className="space-y-10 relative">
           {workshops.map((item, index) => {
