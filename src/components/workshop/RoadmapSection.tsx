@@ -416,7 +416,7 @@ export function RoadmapSection() {
         </motion.p>
       </div>
 
-      <div ref={timelineRef} className="max-w-4xl md:max-w-7xl mx-auto relative">
+      <div ref={timelineRef} className="max-w-4xl mx-auto md:max-w-none md:px-16 relative">
         {/* Layer 1 — static gray line */}
         <div className="absolute left-[8px] sm:left-[14px] md:left-1/2 top-0 bottom-0 w-[2px] md:-translate-x-1/2 bg-white/10" />
 
