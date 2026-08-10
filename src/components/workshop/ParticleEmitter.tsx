@@ -72,7 +72,7 @@ export function ParticleEmitter({
         y,
         vx: Math.cos(angle) * speed,
         vy: Math.sin(angle) * speed - 0.1,
-        size: 1 + Math.random() * 1.8,
+        size: 0.7 + Math.random() * 1.4,
         life,
         maxLife: life,
         color: COLORS[Math.floor(Math.random() * COLORS.length)],
@@ -125,7 +125,7 @@ export function ParticleEmitter({
         const t = p.life / p.maxLife;
         const fadeIn = t > 0.8 ? (1 - t) / 0.2 : 1;
         const fadeOut = t < 0.4 ? t / 0.4 : 1;
-        const alpha = fadeIn * fadeOut * 0.55;
+        const alpha = fadeIn * fadeOut * 0.4;
         const [r8, g8, b8] = p.color;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
