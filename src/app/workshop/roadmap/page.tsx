@@ -14,17 +14,20 @@ export const metadata = {
 export default function RoadmapPage() {
   return (
     <>
-      <PageHeader
-        badge="Workshop Roadmap"
-        title="Your 7-Step AI Journey"
-        description="A structured path from foundational concepts to hands-on exercises and advanced workplace automation."
-      />
-      <RoadmapSection background={<SplineBackground />} />
-      <WhoShouldAttendSection />
-      <PageNav
-        prev={{ title: "Home", href: "/workshop" }}
-        next={{ title: "Workshop Agenda", href: "/workshop/agenda" }}
-      />
+      <SplineBackground />
+      <div className="relative z-10">
+        <PageHeader
+          badge="Workshop Roadmap"
+          title="Your 7-Step AI Journey"
+          description="A structured path from foundational concepts to hands-on exercises and advanced workplace automation."
+        />
+        <RoadmapSection />
+        <WhoShouldAttendSection />
+        <PageNav
+          prev={{ title: "Home", href: "/workshop" }}
+          next={{ title: "Workshop Agenda", href: "/workshop/agenda" }}
+        />
+      </div>
     </>
   );
 }
