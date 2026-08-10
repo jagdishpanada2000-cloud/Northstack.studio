@@ -385,8 +385,25 @@ export function RoadmapSection() {
     i < activeIndex ? "done" : i === activeIndex ? "active" : "idle";
 
   return (
-    <section id="roadmap" className="py-20 md:py-28 relative">
-      <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+    <section id="roadmap" className="py-20 md:py-28 relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div
+          className="absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.6) 1px, transparent 1px)",
+            backgroundSize: "56px 56px",
+            maskImage: "radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 70%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 70%)",
+          }}
+        />
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 h-96 w-[42rem] rounded-full bg-pink-500/12 blur-3xl" />
+        <div className="absolute top-1/3 -left-40 h-96 w-96 rounded-full bg-fuchsia-600/10 blur-3xl" />
+        <div className="absolute bottom-0 -right-40 h-96 w-96 rounded-full bg-pink-500/10 blur-3xl" />
+      </div>
+
+      <div className="text-center max-w-3xl mx-auto mb-16 space-y-3 relative">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -415,6 +432,11 @@ export function RoadmapSection() {
       </div>
 
       <div ref={timelineRef} className="max-w-4xl mx-auto relative">
+        <div
+          className="pointer-events-none absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[30rem] bg-[radial-gradient(ellipse_50%_50%_at_50%_50%,rgba(236,72,153,0.08),transparent_70%)] rounded-full"
+          aria-hidden="true"
+        />
+
         {/* Layer 1 — static gray line */}
         <div className="absolute left-[8px] sm:left-[14px] md:left-1/2 top-0 bottom-0 w-[2px] md:-translate-x-1/2 bg-white/10" />
 
