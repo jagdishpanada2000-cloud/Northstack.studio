@@ -56,10 +56,16 @@ export function ParticleEmitter({
     resize();
     window.addEventListener("resize", resize);
 
+    const isMobile = () => window.innerWidth < 768;
+    const speedMult = () => (isMobile() ? 1.6 : 1);
+
     const pushParticle = (x: number, y: number) => {
       if (particles.length >= MAX_PARTICLES) return;
-      const angle = Math.random() * Math.PI * 2;
-      const speed = 0.5 + Math.random() * 2;
+      const mobile = isMobile();
+      const angle = mobile
+        ? -Math.PI / 3 + (Math.random() * (2 * Math.PI)) / 3
+        : Math.random() * Math.PI * 2;
+      const speed = (0.5 + Math.random() * 2) * speedMult();
       const life = 260 + Math.random() * 260;
       particles.push({
         x,
@@ -73,6 +79,16 @@ export function ParticleEmitter({
       });
     };
 
+    const emitFromHead = () => {
+      const r = head.getBoundingClientRect();
+      const cx = r.x + r.width / 2;
+      const cy = r.y + r.height / 2;
+      if (cy > -80 && cy < window.innerHeight + 80) pushParticle(cx, cy);
+    };
+
+    const onScroll = () => emitFromHead();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
     const frame = () => {
       raf = requestAnimationFrame(frame);
       const r = head.getBoundingClientRect();
@@ -82,8 +98,8 @@ export function ParticleEmitter({
       lastCy = cy;
 
       const onScreen = cy > -80 && cy < window.innerHeight + 80;
-      if (onScreen && speed > 0.5) {
-        spawnAccum = Math.min(spawnAccum + Math.min(speed * 3, 14), MAX_PARTICLES);
+      if (onScreen && speed > 0.3) {
+        spawnAccum = Math.min(spawnAccum + Math.min(speed * (isMobile() ? 5 : 3), 16), 24);
       } else {
         spawnAccum = 0;
       }
@@ -101,10 +117,6 @@ export function ParticleEmitter({
         p.y += p.vy;
         p.vx *= 0.998;
         p.vy += 0.004;
-        if (p.x < -12) p.x = window.innerWidth + 11;
-        else if (p.x > window.innerWidth + 12) p.x = -11;
-        if (p.y < -12) p.y = window.innerHeight + 11;
-        else if (p.y > window.innerHeight + 12) p.y = -11;
         p.life -= 1;
         if (p.life <= 0) {
           particles.splice(i, 1);
@@ -126,6 +138,7 @@ export function ParticleEmitter({
 
     return () => {
       cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", resize);
     };
   }, [reduced, headRef]);
