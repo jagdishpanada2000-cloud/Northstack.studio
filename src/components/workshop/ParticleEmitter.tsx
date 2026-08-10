@@ -33,9 +33,15 @@ export function ParticleEmitter({
   reduced: boolean;
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [enabled, setEnabled] = React.useState(false);
+
+  React.useEffect(() => {
+    const isAndroid = /Android/i.test(navigator.userAgent || "");
+    setEnabled(!isAndroid);
+  }, []);
 
   useEffect(() => {
-    if (reduced) return;
+    if (reduced || !enabled) return;
     const canvas = canvasRef.current;
     const head = headRef.current;
     if (!canvas || !head) return;
@@ -162,7 +168,9 @@ export function ParticleEmitter({
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", resize);
     };
-  }, [reduced, headRef]);
+  }, [reduced, enabled, headRef]);
+
+  if (!enabled) return null;
 
   return (
     <canvas
