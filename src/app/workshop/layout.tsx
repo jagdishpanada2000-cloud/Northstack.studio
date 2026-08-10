@@ -53,7 +53,7 @@ export const viewport: Viewport = {
 export default function WorkshopLayout({ children }: { children: React.ReactNode }) {
   return (
     <div
-      className={`${spaceGrotesk.variable} workshop-root min-h-screen bg-black text-white selection:bg-white/20 selection:text-white flex flex-col items-center relative overflow-x-hidden isolate font-sans`}
+      className={`${spaceGrotesk.variable} workshop-root min-h-screen bg-black text-white selection:bg-white/20 selection:text-white flex flex-col items-center relative overflow-x-clip isolate font-sans`}
     >
       <a
         href="#main-content"
