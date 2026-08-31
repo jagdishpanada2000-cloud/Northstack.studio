@@ -40,9 +40,15 @@ export function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl transition-all duration-500 ${scrolled ? "top-2 md:top-4" : ""}`}
+      className={`fixed left-1/2 -translate-x-1/2 z-50 max-w-6xl transition-all duration-500 ${
+        scrolled ? "top-0 w-full md:top-4 md:w-[95%]" : "top-4 w-[95%] md:top-6"
+      }`}
     >
-      <div className="flex items-center justify-between px-4 md:px-6 py-3 md:py-3.5 rounded-full bg-black/80 border border-white/20 backdrop-blur-xl shadow-2xl shadow-black/90">
+      <div
+        className={`flex items-center justify-between px-4 md:px-6 py-3 md:py-3.5 bg-black/80 border-white/20 backdrop-blur-xl shadow-2xl shadow-black/90 transition-all duration-500 ${
+          scrolled ? "rounded-none md:rounded-full border-b md:border" : "rounded-full border"
+        }`}
+      >
         {/* Left: Logo - Strictly White */}
         <a
           href="#home"
