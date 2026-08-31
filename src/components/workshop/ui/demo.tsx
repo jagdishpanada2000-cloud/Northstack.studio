@@ -70,13 +70,14 @@ export function SplineSceneBasic() {
           </motion.div>
         </div>
 
-        {/* Right content */}
-        <div className="flex-1 relative min-h-[380px] sm:min-h-[420px] md:min-h-0">
+        <div className="flex-1 relative min-h-[380px] sm:min-h-[420px] md:min-h-0 overflow-hidden rounded-b-3xl md:rounded-r-3xl md:rounded-bl-none">
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent z-10 pointer-events-none md:hidden" />
-          <SplineScene
-            scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-            className="w-full h-full"
-          />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <SplineScene
+              scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+              className="w-full h-full transform scale-[1.5] sm:scale-[1.2] md:scale-100 origin-center md:origin-center"
+            />
+          </div>
         </div>
       </div>
     </div>
