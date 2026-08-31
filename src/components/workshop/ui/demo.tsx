@@ -75,7 +75,7 @@ export function SplineSceneBasic() {
           <div className="absolute inset-0 flex items-center justify-center">
             <SplineScene
               scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-              className="w-full h-full transform scale-[1.5] sm:scale-[1.2] md:scale-100 origin-center md:origin-center"
+              className="w-full h-full transform scale-[1.2] sm:scale-[1.1] md:scale-100 origin-center md:origin-center"
             />
           </div>
         </div>
