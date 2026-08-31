@@ -218,16 +218,17 @@ export function ChecklistSection() {
                 </div>
 
                 {/* Bottom Verification Tip & Links */}
-                <div className="mt-5 pt-4 border-t border-white/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5">
-                  <div className="flex items-center gap-1.5 text-xs text-neutral-400">
+                <div className="mt-5 pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-3">
+                  <div className="flex items-center gap-1.5 text-xs text-neutral-400 flex-1 min-w-[200px]">
                     <Terminal className="size-3.5 text-neutral-400 flex-shrink-0" />
-                    <span className="font-mono text-[11px] truncate max-w-[220px] sm:max-w-xs">
-                      {item.verifyTip}
-                    </span>
+                    <span className="font-mono text-[11px] truncate">{item.verifyTip}</span>
                   </div>
 
                   {item.links && (
-                    <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+                    <div
+                      className="flex flex-wrap items-center gap-3"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       {item.links.map((link, lIdx) => (
                         <a
                           key={lIdx}
