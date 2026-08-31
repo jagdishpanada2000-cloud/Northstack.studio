@@ -77,14 +77,16 @@ export function Navbar() {
             ))}
           </div>
 
-          <button
-            onClick={(e) => handleScrollTo(e, "#register")}
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScJAKZi6sfxpMx4YIQOzWeXWNnYsMcGvdaL4Po7gAInVn0fAg/viewform?usp=publish-editor"
+            target="_blank"
+            rel="noopener noreferrer"
             id="navbar-cta-register"
             className="hidden md:inline-flex items-center justify-center gap-1.5 px-6 py-2.5 rounded-full bg-white text-black text-sm font-semibold hover:scale-105 hover:bg-neutral-100 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] cursor-pointer active:scale-95"
           >
             <span>Register Now</span>
             <ArrowRight className="size-4 text-black" />
-          </button>
+          </a>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -126,16 +128,18 @@ export function Navbar() {
                 <ArrowRight className="size-4 text-white" />
               </motion.a>
             ))}
-            <motion.button
+            <motion.a
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35 }}
-              onClick={(e) => handleScrollTo(e, "#register")}
+              href="https://docs.google.com/forms/d/e/1FAIpQLScJAKZi6sfxpMx4YIQOzWeXWNnYsMcGvdaL4Po7gAInVn0fAg/viewform?usp=publish-editor"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-2 mx-1 px-6 py-3.5 rounded-xl bg-white text-black text-base font-semibold hover:bg-neutral-200 transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>Register Now</span>
               <ArrowRight className="size-4 text-black" />
-            </motion.button>
+            </motion.a>
           </motion.div>
         )}
       </AnimatePresence>

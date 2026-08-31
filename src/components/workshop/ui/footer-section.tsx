@@ -163,8 +163,9 @@ export function Footer() {
               Curriculum
             </a>
             <a
-              href="#register"
-              onClick={(e) => handleScrollTo(e, "#register")}
+              href="https://docs.google.com/forms/d/e/1FAIpQLScJAKZi6sfxpMx4YIQOzWeXWNnYsMcGvdaL4Po7gAInVn0fAg/viewform?usp=publish-editor"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-neutral-300 text-white font-medium transition-colors"
             >
               Register

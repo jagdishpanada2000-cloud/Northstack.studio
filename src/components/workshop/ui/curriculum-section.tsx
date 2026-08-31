@@ -258,7 +258,9 @@ export function CurriculumSection() {
             </p>
           </div>
           <a
-            href="#register"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScJAKZi6sfxpMx4YIQOzWeXWNnYsMcGvdaL4Po7gAInVn0fAg/viewform?usp=publish-editor"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-semibold text-sm hover:bg-neutral-200 transition-all shadow-lg shadow-white/10 flex-shrink-0 cursor-pointer"
           >
             <span>Claim Workshop Seat</span>

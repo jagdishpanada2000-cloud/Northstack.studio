@@ -2,7 +2,6 @@ import { SplineSceneBasic } from "@/components/workshop/ui/demo";
 import DemoOne from "@/components/workshop/ui/feature-demo";
 import { CurriculumSection } from "@/components/workshop/ui/curriculum-section";
 import { ChecklistSection } from "@/components/workshop/ui/checklist-section";
-import { RegistrationSection } from "@/components/workshop/ui/registration-section";
 
 export default function Home() {
   return (
@@ -33,11 +32,6 @@ export default function Home() {
         {/* Section 3: Prerequisites & Pre-Flight Checklist */}
         <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <ChecklistSection />
-        </div>
-
-        {/* Section 4: Registration Form */}
-        <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <RegistrationSection />
         </div>
       </div>
     </>

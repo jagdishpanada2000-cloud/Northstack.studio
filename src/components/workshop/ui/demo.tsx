@@ -49,14 +49,16 @@ export function SplineSceneBasic() {
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto"
           >
-            <button
-              onClick={() => scrollTo("#register")}
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLScJAKZi6sfxpMx4YIQOzWeXWNnYsMcGvdaL4Po7gAInVn0fAg/viewform?usp=publish-editor"
+              target="_blank"
+              rel="noopener noreferrer"
               id="hero-primary-btn"
               className="w-full sm:w-auto group relative inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-semibold text-black bg-white rounded-full overflow-hidden transition-all hover:scale-105 hover:bg-neutral-100 hover:shadow-[0_0_35px_rgba(255,255,255,0.4)] cursor-pointer active:scale-95"
             >
               <span className="relative z-10">Register Now</span>
               <ArrowRight className="relative z-10 size-4 transition-transform group-hover:translate-x-1" />
-            </button>
+            </a>
             <button
               onClick={() => scrollTo("#curriculum")}
               id="hero-secondary-btn"
