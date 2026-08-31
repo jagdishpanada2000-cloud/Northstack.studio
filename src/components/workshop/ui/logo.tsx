@@ -2,8 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const LOGO_URL =
-  "https://res.cloudinary.com/dwta5v9wi/image/upload/v1786033045/logo-removebg-preview_s8itpb.png";
+const LOGO_URL = "/cloudinary-logo.webp";
 
 interface LogoProps {
   variant?: "navbar" | "footer";
