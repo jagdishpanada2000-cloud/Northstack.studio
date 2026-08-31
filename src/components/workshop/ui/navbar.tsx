@@ -1,139 +1,141 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Logo } from "@/components/workshop/ui/logo";
-
-const navLinks = [
-  { name: "Home", href: "/workshop" },
-  { name: "Workshop Roadmap", href: "/workshop/roadmap" },
-  { name: "Agenda", href: "/workshop/agenda" },
-  { name: "AI Tools", href: "/workshop/tools" },
-  { name: "FAQ", href: "/workshop/faq" },
-];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 12);
+      setScrolled(window.scrollY > 20);
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+  const navLinks = [
+    { label: "Home", href: "#home" },
+    { label: "Tech Stack", href: "#tech-stack" },
+    { label: "Curriculum", href: "#curriculum" },
+    { label: "Checklist", href: "#checklist" },
+  ];
 
-  const isActive = (href: string) =>
-    href === "/workshop" ? pathname === "/workshop" : pathname.startsWith(href);
+  const handleScrollTo = (
+    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
+    href: string,
+  ) => {
+    e.preventDefault();
+    setIsOpen(false);
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <motion.nav
-      initial={{ y: -80, opacity: 0 }}
+      initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "bg-white/[0.06] backdrop-blur-md border-b border-white/10"
-          : "bg-white/[0.04] backdrop-blur-sm"
-      }`}
-      aria-label="Primary navigation"
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className={`fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl transition-all duration-500 ${scrolled ? "top-2 md:top-4" : ""}`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-2">
-        <Logo variant="navbar" />
+      <div className="flex items-center justify-between px-4 md:px-6 py-3 md:py-3.5 rounded-full bg-black/80 border border-white/20 backdrop-blur-xl shadow-2xl shadow-black/90">
+        {/* Left: Logo - Strictly White */}
+        <a
+          href="#home"
+          onClick={(e) => handleScrollTo(e, "#home")}
+          className="flex items-center gap-2.5 pl-1 md:pl-0 group"
+          id="navbar-brand-logo"
+        >
+          <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center group-hover:scale-105 group-hover:bg-white/20 transition-all duration-300">
+            <div className="w-3.5 h-3.5 rounded-full bg-white flex items-center justify-center">
+              <div className="w-1.5 h-1.5 rounded-full bg-black" />
+            </div>
+          </div>
+          <span className="text-white font-bold tracking-tight text-lg group-hover:text-white transition-colors">
+            WebsCraft
+          </span>
+        </a>
 
-        <div className="hidden lg:flex items-center gap-1 text-xs font-medium text-neutral-300">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              aria-current={isActive(link.href) ? "page" : undefined}
-              className={`relative px-3.5 py-2 rounded-full transition-colors hover:text-white ${
-                isActive(link.href) ? "text-white bg-white/10" : ""
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-
-        <div className="flex items-center gap-2">
-          <Link
-            href="/workshop/register"
-            className="relative hidden sm:inline-flex items-center justify-center px-5 py-2 rounded-full text-white text-xs font-semibold overflow-hidden bg-gradient-to-b from-pink-500/55 via-pink-500/30 to-fuchsia-600/55 border border-white/20 backdrop-blur-xl hover:scale-105 active:scale-95 transition-all shadow-[inset_0_1px_1px_rgba(255,255,255,0.35),inset_0_-8px_16px_rgba(255,255,255,0.1),0_4px_20px_rgba(236,72,153,0.35)] hover:border-white/35"
-          >
-            <span className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.35),transparent_60%)] pointer-events-none" />
-            <span className="absolute top-0 left-[8%] right-[8%] h-[45%] rounded-full bg-white/25 blur-lg pointer-events-none" />
-            <span className="absolute bottom-0 left-1/4 right-1/4 h-[35%] rounded-full bg-pink-300/25 blur-lg pointer-events-none" />
-            <span className="relative">Register</span>
-          </Link>
+        {/* Right: Links + CTA */}
+        <div className="flex items-center gap-2 md:gap-8">
+          <div className="hidden md:flex items-center gap-7 text-sm font-medium text-neutral-400">
+            {navLinks.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={(e) => handleScrollTo(e, item.href)}
+                className="relative hover:text-white transition-colors duration-200 group py-1"
+                id={`nav-link-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+              >
+                {item.label}
+                <span className="absolute -bottom-0.5 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full rounded-full" />
+              </a>
+            ))}
+          </div>
 
           <button
-            className="lg:hidden text-neutral-300 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors min-h-[44px] min-w-[44px]"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isOpen}
-            aria-controls="mobile-menu"
+            onClick={(e) => handleScrollTo(e, "#register")}
+            id="navbar-cta-register"
+            className="hidden md:inline-flex items-center justify-center gap-1.5 px-6 py-2.5 rounded-full bg-white text-black text-sm font-semibold hover:scale-105 hover:bg-neutral-100 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] cursor-pointer active:scale-95"
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            <span>Register Now</span>
+            <ArrowRight className="size-4 text-black" />
+          </button>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            id="mobile-menu-toggle"
+            aria-label="Toggle navigation menu"
+            className="md:hidden text-neutral-300 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? (
+              <X size={20} className="text-white" />
+            ) : (
+              <Menu size={20} className="text-white" />
+            )}
           </button>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            id="mobile-menu"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden overflow-hidden bg-neutral-950/95 backdrop-blur-2xl border-b border-white/10"
+            className="md:hidden absolute top-full left-0 w-full mt-2 p-4 rounded-3xl bg-black/95 border border-white/20 backdrop-blur-2xl flex flex-col gap-2 shadow-2xl shadow-black overflow-hidden"
           >
-            <div className="px-4 py-3 flex flex-col gap-1">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, x: -8 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.04 }}
-                >
-                  <Link
-                    href={link.href}
-                    aria-current={isActive(link.href) ? "page" : undefined}
-                    className={`block px-4 py-3.5 rounded-xl text-sm font-medium transition-colors ${
-                      isActive(link.href)
-                        ? "text-white bg-white/10"
-                        : "text-neutral-300 hover:text-white hover:bg-white/5"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                </motion.div>
-              ))}
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: navLinks.length * 0.04 }}
-                className="pt-2"
+            {navLinks.map((item, i) => (
+              <motion.a
+                key={item.label}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.08 }}
+                href={item.href}
+                onClick={(e) => handleScrollTo(e, item.href)}
+                className="text-neutral-300 hover:text-white text-base font-medium transition-colors px-5 py-3.5 rounded-xl hover:bg-white/10 flex items-center justify-between"
               >
-                <Link
-                  href="/workshop/register"
-                  className="block text-center py-3.5 px-6 rounded-xl text-white text-sm font-semibold bg-gradient-to-b from-pink-500/55 via-pink-500/30 to-fuchsia-600/55 border border-white/20 backdrop-blur-xl"
-                >
-                  Register for the Workshop
-                </Link>
-              </motion.div>
-            </div>
+                <span>{item.label}</span>
+                <ArrowRight className="size-4 text-white" />
+              </motion.a>
+            ))}
+            <motion.button
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 }}
+              onClick={(e) => handleScrollTo(e, "#register")}
+              className="mt-2 mx-1 px-6 py-3.5 rounded-xl bg-white text-black text-base font-semibold hover:bg-neutral-200 transition-all flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <span>Register Now</span>
+              <ArrowRight className="size-4 text-black" />
+            </motion.button>
           </motion.div>
         )}
       </AnimatePresence>
