@@ -2,7 +2,7 @@
 import React from "react";
 import type { ComponentProps, ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { Github, Twitter, Linkedin, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 interface FooterLink {
   title: string;
@@ -77,35 +77,6 @@ export function Footer() {
               A 3-day intensive live workshop equipping developers to architect, code, and deploy
               full-stack AI SaaS applications with speed.
             </p>
-            <div className="flex items-center gap-3 pt-2">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="WebsCraft on GitHub"
-                className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-white/10 hover:scale-105 transition-all"
-              >
-                <Github className="size-4 text-white" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="WebsCraft on Twitter"
-                className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-white/10 hover:scale-105 transition-all"
-              >
-                <Twitter className="size-4 text-white" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="WebsCraft on LinkedIn"
-                className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-white/10 hover:scale-105 transition-all"
-              >
-                <Linkedin className="size-4 text-white" />
-              </a>
-            </div>
           </AnimatedContainer>
 
           {/* Navigation Columns */}

@@ -29,8 +29,8 @@ export function SplineSceneBasic() {
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
             className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1]"
           >
-            Build & Deploy <br className="hidden sm:block" />
-            <span className="text-white">AI Systems</span> at Hackathon Speed
+            Build Deploy and <br className="hidden sm:block" />
+            <span className="text-white">Scale</span> at speed
           </motion.h1>
 
           <motion.p
