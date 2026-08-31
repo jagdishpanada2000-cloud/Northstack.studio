@@ -66,8 +66,8 @@ export function WhyAttendSection() {
                 />
 
                 <div className="relative z-10">
-                  <div className="flex items-start gap-5">
-                    <div className="flex-shrink-0 p-3 rounded-2xl bg-white/5 border border-white/10">
+                  <div className="flex flex-col gap-5">
+                    <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-2xl bg-white/5 border border-white/10">
                       <IconComponent className="w-6 h-6 text-neutral-300 group-hover:text-white transition-colors" />
                     </div>
                     <div>
