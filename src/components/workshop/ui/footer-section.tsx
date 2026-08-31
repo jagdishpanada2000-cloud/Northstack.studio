@@ -66,11 +66,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           <AnimatedContainer className="lg:col-span-2 space-y-6">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center">
-                <div className="w-3.5 h-3.5 rounded-full bg-white flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 rounded-full bg-black" />
-                </div>
-              </div>
+              <img
+                src="https://res.cloudinary.com/dwta5v9wi/image/upload/v1788201283/workshop_logo.png"
+                alt="WebsCraft"
+                className="w-8 h-8 rounded-xl object-contain"
+              />
               <span className="text-white font-bold text-2xl tracking-tight">WebsCraft</span>
             </div>
             <p className="text-neutral-400 text-sm max-w-sm leading-relaxed font-normal">

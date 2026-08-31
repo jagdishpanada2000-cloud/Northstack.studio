@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const LOGO_URL = "/cloudinary-logo.webp";
+const LOGO_URL = "https://res.cloudinary.com/dwta5v9wi/image/upload/v1788201283/workshop_logo.png";
 
 interface LogoProps {
   variant?: "navbar" | "footer";

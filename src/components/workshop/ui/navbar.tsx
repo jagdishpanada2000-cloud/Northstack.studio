@@ -50,11 +50,11 @@ export function Navbar() {
           className="flex items-center gap-2.5 pl-1 md:pl-0 group"
           id="navbar-brand-logo"
         >
-          <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center group-hover:scale-105 group-hover:bg-white/20 transition-all duration-300">
-            <div className="w-3.5 h-3.5 rounded-full bg-white flex items-center justify-center">
-              <div className="w-1.5 h-1.5 rounded-full bg-black" />
-            </div>
-          </div>
+          <img
+            src="https://res.cloudinary.com/dwta5v9wi/image/upload/v1788201283/workshop_logo.png"
+            alt="WebsCraft"
+            className="w-8 h-8 rounded-xl object-contain group-hover:scale-105 transition-all duration-300"
+          />
           <span className="text-white font-bold tracking-tight text-lg group-hover:text-white transition-colors">
             WebsCraft
           </span>
