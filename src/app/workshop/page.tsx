@@ -1,5 +1,6 @@
 import { SplineSceneBasic } from "@/components/workshop/ui/demo";
 import DemoOne from "@/components/workshop/ui/feature-demo";
+import { WhyAttendSection } from "@/components/workshop/ui/why-attend-section";
 import { CurriculumSection } from "@/components/workshop/ui/curriculum-section";
 import { ChecklistSection } from "@/components/workshop/ui/checklist-section";
 
@@ -17,6 +18,11 @@ export default function Home() {
         {/* Hero Section */}
         <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 pb-12 md:pt-36 md:pb-16">
           <SplineSceneBasic />
+        </div>
+
+        {/* Section 0: Why Attend */}
+        <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <WhyAttendSection />
         </div>
 
         {/* Section 1: The Modern Stack */}
